@@ -17,7 +17,7 @@ subtitle                 : "Deep learning paper review"
 name                     : &name "HyeyoonKang" # &name is a YAML anchor which can be *referenced later
 description              : "deep learning paper review upload"
 url                      : https://mmistakes.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : # "/minimal-mistakes" # the subpath of your site, e.g. "/blog"
+baseurl                  : "/categories" # the subpath of your site, e.g. "/blog"
 repository               : "khyeyoon/khyeyoon.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
@@ -33,7 +33,7 @@ comments:
   facebook:
     # https://developers.facebook.com/docs/plugins/comments
     appid                :
-    num_posts            : # 5 (default)
+    num_posts            : 5 (default)
     colorscheme          : # "light" (default), "dark"
   utterances:
     theme                : # "github-light" (default), "github-dark"
