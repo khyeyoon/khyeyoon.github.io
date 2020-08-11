@@ -95,9 +95,6 @@ author:
   location         : "Hanbat university"
   email            : "koycc1220@gmail.com"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "koycc1220@gmail.com"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/khyeyoon"
