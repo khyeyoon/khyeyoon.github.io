@@ -1,0 +1,76 @@
+---
+title:  "Zooming Slow-Mo: Fast and Accurate One-Stage Space-Time Video Super-Resolution review"
+last_modified_at: 2020-08-11 00:00:00 -0400
+categories: 
+  - Space-Time Video Super-Resolution paper
+  - "2020"
+tags:
+  - update
+toc: true
+toc_label: "Getting Started"
+---
+
+# Zooming Slow-Mo: Fast and Accurate One-Stage Space-Time Video Super-Resolution
+> Xiang, Xiaoyu, et al. "Zooming Slow-Mo: Fast and Accurate One-Stage Space-Time Video Super-Resolution." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2020.
+
+## Abstract
+
+* Space-Time Video Super-Resolution : low frame rate(LFR)인 low resolution(LR) video에서 high-resolution(HR) slow-motion video를 생성
+
+* STVSR의 단순한 방식 : video-frame interpolation(VFI) task와 video super-resolution(VSR) task 2가지로 나누어서 해결
+
+> 이런 two-stage 방식들은 두 task 사이 연관성을 이용할 수 없음
+
+> VFI나 VSR networks는 large frame-synthesis module 또는 large reconstruction module을 가짐 (large model size, time-consuming)
+
+* One-stage space-time video super-resolution framework 제안
+
+> LFR, LR video에서 직접 HR slow-motion video를 만들어줌
+
+1) feature temporal interpolation network
+
+존재하지 않는 LR video frame을 VFI network처럼 합성하지 않고, 먼저 local temporal contexts를 포착하면서 존재하지 않는 LR video frame에서의 LR frame features를 interpolation 
+
+2) deformable ConvLSTM
+
+global temporal contexts를 더 잘 얻기 위해, temporal 정보의 alignment와 aggregation을 동시에 수행
+
+3) deep reconstruction network
+
+최종적으로, HR slow-motion video frames을 예측
+
+* 광범위한 실험을 진행하여 SOTA를 달성하였고 기존의 방식(two-stage 방식)보다 3배 빠른 속도
+
+<img src="/assets/img/ZSM/fig1.PNG" width="100%" height="100%" title="70px" alt="memoryblock">
+
+## Introduction 
+
+* Space-Time Video Super-Resolution (STVSR) : low resolution과 low frame rate를 가진 input video로부터 high space-time resolution을 가진 사실적인 video sequence를 생성하는 것
+
+> film making, high-definition television과 같은 응용분야에서 HR slow-motion videos를 필요로 함
+
+* * *
+
+* STVSR을 다루는 기존 방식들은 일반적으로 hand-crafted regularization과 강한 assumptions을 함
+
+> 문제점 : 강한 constraints으로 인해, model이 다양하고 방대한 space-time visual patterns을 만들어내는 것을 제한시키며 계산비용도 많이 듦
+
+* * *
+
+* deep convolutional neural networks가 다양한 video restoration tasks에서 좋은 결과를 보임
+
+> video restoration task : video frame interpolation, video super-resolution, video deblurring
+
+* STVSR network를 video frame interpolation method와 video super-resolution method를 직접 결합시켜 디자인함 (two-stage)
+
+> 먼저 VFI를 통해 존재하지 않는 LR frames을 생성하고, 그 이후에 VSR을 사용하여 LR video frames을 HR frames으로 reconstruction 수행
+
+> 문제점 : two-stage 방식은 temporal interpolation과 spatial super-resolution를 개별적으로 처리하면서 두 task 사이 상관관계를 활용할 수 없음
+
+
+
+
+
+
+
+
