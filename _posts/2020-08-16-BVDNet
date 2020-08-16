@@ -1,0 +1,75 @@
+---
+title:  "Deep blind video decaptioning by temporal aggregation and recurrence review"
+last_modified_at: 2020-08-16 00:00:00 -0400
+categories: 
+  - Video decaptioning paper
+  - "2019"
+tags:
+  - update
+toc: true
+toc_label: "Getting Started"
+---
+
+# Deep blind video decaptioning by temporal aggregation and recurrence
+> Kim, Dahun, et al. "Deep blind video decaptioning by temporal aggregation and recurrence." Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2019.
+
+## Abstract
+
+* Blind video decaptioning : 자동적으로 text overlays(ex, 자막)를 제거하고, input masks 없이 text로 가려져있던 부분을 그려주는 것
+
+* deep learning 기반의 기존 방식 : 하나의 image로 처리하고, 대부분 corrupted pixels(text overlay)의 위치가 알려져 있다고 가정함
+
+> 본 논문의 목표 : mask 정보없이 video sequences에서 자동적으로 text 제거를 수행하는 것
+
+* fast blind video decaptioning을 위한 단순하지만 효과적인 framework 제안
+
+* * *
+
+#### The encoder-decoder model 
+
+* The encoder 
+
+input : multiple source frames 
+
+> scene dynamics으로부터 visible pixel을 얻을 수 있음 ??
+
+* The decoder
+
+encoder로부터 나온 정보(hint)가 합쳐져서(aggregation) decoder의 입력으로 들어감
+
+* input frame에서 decoder output으로 residual connection을 적용시킴
+
+> network가 오직 corrupted regions에 집중할 수 있도록 함
+
+* * *
+
+* ECCV chalearn 2018 LAP Inpainting Competition Track2(video decaptioning)에서 1위를 차지
+
+* 또한, 하나의 recurrent feedback을 적용시키면서 model의 성능을 향상시킴
+
+> temporal coherence를 보장할뿐만 아니라 corrupted pixels 위치에 대한 강한 단서를 제공함
+
+* 양적, 질적인 실험 모두에서 정확하고 temporal consistent video를 얻는 결과를 보여줌 (real time : 50+fps)
+
+<img src="/assets/img/ZSM/fig1.PNG" width="100%" height="100%" title="70px" alt="memoryblock">
+
+
+## Introduction
+
+* 시각적인 contents로 소비하기 이전에 잃어버리거나 오염된 data를 처리하는 것은 중요한 단계임
+
+* image와 video를 처리하는 많은 applications에서 그러한 불완전성(온전하지 못한 data)은 인간과 기계 모두에 대한 시각적 인식을 저하시킴
+
+> 해결책 : denoising, restoration, super-resolution, inpainting
+
+* 본 논문은 video decaptioning에 focus를 둠
+
+> real-world video restoration scenarios에 직접 적용할 수 있는 video inpainting tasks 중 하나임
+
+* * *
+
+*
+
+
+
+
