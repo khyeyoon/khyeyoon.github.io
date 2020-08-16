@@ -31,7 +31,7 @@ toc_label: "Getting Started"
 
 input : multiple source frames 
 
-> scene dynamics으로부터 visible pixel을 얻을 수 있음 ??
+> scene dynamics으로부터 visible pixel을 얻을 수 있음 
 
 * The decoder
 
@@ -68,7 +68,38 @@ encoder로부터 나온 정보(hint)가 합쳐져서(aggregation) decoder의 입
 
 * * *
 
-*
+* 다양한 언어의 미디어와 비디오 데이터에서, 텍스트 캡션이나 캡슐화된 광고가 빈번하게 존재함
+
+> 이러한 text overlays는 visual attention을 떨어뜨리고, frames의 일부분을 가림
+
+* video에서 text overlays를 제거하고 가려진 부분을 inpainting 하는 것은 spatio-temporal context에 대한 이해가 필요함
+
+* 하지만, video sequence를 처리하는 것은 높은 memory를 필요로 하고 추가적인 time dimension으로 인한 시간 복잡도를 유발함
+
+* * *
+
+* video decaptioning을 처리하는 단순한 방식은 frame 별로 독립적으로 처리하는 것
+
+> 단점 : video dynamics에서 얻을 수 있는 정보를 활용할 수 없음
+
+* 대부분의 자막이 있는 videos에서 자막으로 가려진 부분은 인접 frames에서 종종 발견할 수 있음
+
+* single frame으로 처리하는 것은 temporal consistency를 고려하지 않기 때문에, 복원된 video에서 연속적인 frames은 자연스럽지 못할 수 있음
+
+* video decaptioning에 존재하는 challenge : visual semantics에 독립적으로 자막이 갑자기 사라지거나 바뀌기 때문에, temporal stability를 유지하기 어려움
+
+* * *
+
+* 자동적인 text removal에 존재하는 challenge : corrupted pixels에 대한 binary indicator(inpainting mask)는 사전에 주어지지 않음
+
+> 대부분의 기존 inpainting 방법[22,31,34]은 보통 mask를 사용할 수 있다고 가정하고 이를 기반으로 다른 image priors를 사용함
+
+
+
+
+
+
+
 
 
 
