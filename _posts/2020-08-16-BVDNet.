@@ -134,6 +134,28 @@ encoder로부터 나온 정보(hint)가 합쳐져서(aggregation) decoder의 입
 
 ## Proposed Method
 
+* Video decaptioning : 자막과 노이즈가 있는 frames에서 original frames을 예측하는 것
+
+* 다양한 인접 frames으로부터 hints를 모으고 target frame을 복원시킴
+
+> 인접 frames에서 자막이 바뀌거나 object가 움직이면서 가려진 부분의 정보를 얻을 수 있음
+
+* recurrent feedback connection 사용
+
+> temporal flickering을 감소시키고, corrupted regions을 자동적으로 탐지함
+
+### 3.1 Residual Learning
+
+* frame의 모든 pixel을 직접 예측하는 것은 불필요하게 uncorrupted pixes을 건드릴 수 있음
+
+* pixel indicators(inpainting mask) 없이 task를 다루기 위해, residual learning을 통해 학습을 진행
+
+> input center frame과 예측된 residual image를 합하여 final output을 생성 (pixel-wise 방식)
+
+* 
+
+
+
 
 
 
