@@ -51,9 +51,6 @@ encoder로부터 나온 정보(hint)가 합쳐져서(aggregation) decoder의 입
 
 * 양적, 질적인 실험 모두에서 정확하고 temporal consistent video를 얻는 결과를 보여줌 (real time : 50+fps)
 
-<img src="/assets/img/ZSM/fig1.PNG" width="100%" height="100%" title="70px" alt="memoryblock">
-
-
 ## Introduction
 
 * 시각적인 contents로 소비하기 이전에 잃어버리거나 오염된 data를 처리하는 것은 중요한 단계임
@@ -94,8 +91,48 @@ encoder로부터 나온 정보(hint)가 합쳐져서(aggregation) decoder의 입
 
 > 대부분의 기존 inpainting 방법[22,31,34]은 보통 mask를 사용할 수 있다고 가정하고 이를 기반으로 다른 image priors를 사용함
 
+* video에서 모든 frame에 대해서 pixel masks를 annotation 하는 것은 실용적이지 못하고 제한적임
 
+* * *
 
+* 단순하지만 효과적인 encoder-decoder model을 제안
+
+<img src="/assets/img/BVDNet/fig1.PNG" width="80%" height="80%" title="70px" alt="memoryblock">
+
+* encoder : 인접 frames으로부터 spatio-temporal context를 융합시킴(aggregation)
+
+* decoder : target frame을 reconstruction
+
+* residual learning 알고리즘을 적용 
+
+> corrupted pixels에만 집중할 수 있도록 함 
+
+* recurrent feedback connection 
+
+> 이전에 생성된 frame에 기반하여 현재 frame을 생성
+
+* 인접 frames과 이전 output에서의 features는 corrupted regions에서 매우 다르기 때문에, model이 corrupted pixel을 더 잘 찾도록 도와주고,
+성능을 향상 시킴
+
+* Loss function : gradient reconstruction loss, structural similarity loss
+
+* blind video inpainting에 최초로 deep learning을 적용
+
+### Contribution
+
+1) 기존 image/video inpainting 방식들과 달리, inpainting masks를 필요로 하지 않는 encoder-decoder model
+
+2) video decaptioning을 위한 효과적이고 강력한 loss function 사용
+
+> 광범위한 실험을 통해 loss terms의 효과를 경험적으로 확인
+
+3) 다른 방식의 성능을 뛰어넘었고, real-time으로 동작(50+ fps)
+
+> ECCV chalearn 2018 LAP Video Decaptioning challenge에서 1위를 차지
+
+4) recurrence mechanism을 도입하여 성능 향상 (visual quality, temporal coherency)
+
+## Proposed Method
 
 
 
