@@ -2,7 +2,8 @@
 title:  "WIDER FACE : A Face Detection Benchmark review"
 last_modified_at: 2020-07-04 11:50:28 -0400
 categories: 
-  - Face recognition paper
+  - Face detection paper
+  - "2016"
 tags:
   - update
 toc: true
