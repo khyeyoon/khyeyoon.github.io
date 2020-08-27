@@ -2,7 +2,7 @@
 title:  "Pyramidbox: A context-assisted single shot face detector review"
 last_modified_at: 2020-07-17 00:00:00 -0400
 categories: 
-  - Face recognition paper
+  - Face detection paper
   - "2018"
 tags:
   - update
