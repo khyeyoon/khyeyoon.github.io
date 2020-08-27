@@ -1,12 +1,10 @@
 # Khyeyoon.github.io
 
-**Posts by Category**
-
 > https://khyeyoon.github.io/categories/
 
 ## paper review
 
-* * *
+**Posts by Category**
 
 ### Object detection
 
@@ -19,5 +17,3 @@
 ### Video Inpainting
 
 ### ...
-
-* * *
