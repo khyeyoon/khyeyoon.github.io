@@ -8,6 +8,8 @@
 
 ### Object detection
 
+### Text detection
+
 ### Face detection/Face recognition
 
 ### Video Super-Resolution/Video deblurring
