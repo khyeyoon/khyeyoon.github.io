@@ -1,0 +1,69 @@
+---
+title:  "Efficient and accurate arbitrary-shaped text detection with pixel aggregation network review"
+last_modified_at: 2020-08-31 00:00:00 -0400
+categories: 
+  - Text detection paper
+  - "2019"
+tags:
+  - update
+toc: true
+toc_label: "Getting Started"
+---
+
+# Efficient and accurate arbitrary-shaped text detection with pixel aggregation network
+> Wang, Wenhai, et al. "Efficient and accurate arbitrary-shaped text detection with pixel aggregation network." Proceedings of the IEEE International Conference on Computer Vision. 2019.
+
+## Abstract
+
+* Text reading systems에서 중요한 단계인 scene text detection은 convolutional neural networks와 함께 빠르게 발전함
+
+* 하지만 이를 real-world applications에 적용하기 어려운 2가지 challenges가 존재함
+
+1) 속도와 정확도 사이의 trade-off 관계
+
+2) 임의의 shape를 갖는 text를 다루기 힘듦 (arbitrary-shaped text instance)
+
+* 최근, 임의의 shape를 다룰 수 있는 방식들이 제안되었으나 속도 문제로 실용적이지 못함
+
+* * *
+
+* 낮은 계산 비용의 segmentation head와 learnable post-processing으로 이루어진 Pixel Aggregation Network(PAN) 제안
+
+> efficient and accurate arbitrary-shaped text detector
+
+* Segmentation head : Feature Pyramid Enhancement Module(FPEM), Feature Fusion Module(FFM)
+
+1) FPEM : cascadable U-shaped module로, 더 좋은 segmentation을 위해 multi-level 정보를 이용
+
+2) FFM : FPEM에서 받은 features(different depths??)를 segmentation을 위한 최종 feature로 융합시킴
+
+* Pixel Aggregation(PA)로 구현된 learnable post-processing 수행
+
+> 예측된 similarity vectors로 text pixels을 정확하게 융합시킬 수 있음
+
+* standard benchmarks에서 실험을 하여 PAN의 superiority를 증명
+
+> CTW1500에서 84.2 FPS로 79.9%의 F-measure를 달성 (빠르고 정확한 PAN)
+
+<img src="/assets/img/PAN/fig1.PNG" width="60%" height="60%" title="70px" alt="memoryblock">
+
+## Introduction
+
+* Scene text detection은 computer vision task(text-related)에서 기초적이고 중요한 task임
+
+> text recognition, text retrieval, license plate recognition, text visual quenstion answering 등등
+
+* CNN을 통한 object detection과 segmentation의 발전으로 scene text detection이 큰 발전을 이룸
+
+* 주된 challenges 중 하나인 Arbitrary-shaped text detection에 많은 연구가 집중됨 (curved text instance)
+
+> 이러한 방식들은 heavy models 또는 복잡한 후처리 과정으로 인해 속도가 느리다는 문제점이 있음
+
+* 한편, 높은 효율성을 갖는 이전의 text detectors는 대부분 quadrangular text instances를 예측하기 때문에 curved text를 예측하기에 어려움이 있음
+
+* * *
+
+### How to design an efficient and accurate arbitrary-shaped text detector?
+
+
+
