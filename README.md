@@ -8,7 +8,7 @@
 
 ### Object detection
 
-### Text detection
+### Text detection/Text recognition
 
 ### Face detection/Face recognition
 
