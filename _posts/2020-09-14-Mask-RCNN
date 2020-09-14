@@ -1,0 +1,36 @@
+---
+title:  "Fully convolutional networks for semantic segmentation review"
+last_modified_at: 2020-09-14 00:00:00 -0400
+categories: 
+  - Object detection paper
+tags:
+  - update
+toc: true
+toc_label: "Getting Started"
+---
+
+# Mask r-cnn
+> He, Kaiming, et al. "Mask r-cnn." Proceedings of the IEEE international conference on computer vision. 2017.
+
+## Abstract
+ 
+* Mask R-CNN : object instance segmentation을 위한 단순하고 유연성 있는 일반적인 framework
+
+> 각 instance에 대한 segmentation mask를 생성하는 동시에 image에서 obejcts detection을 수행
+
+> Faster R-CNN(기존의 branch)에 object mask를 예측하는 branch를 추가 (작은 overhead)
+
+* Mask R-CNN은 다른 task에도 쉽게 적용이 가능함
+
+> Pose estimation에 적용하여 좋은 성능을 냄
+
+* COCO challenge 3가지 track에서 1위를 차지함
+
+> instance segmentation, bounding box object detection, person keypoint detection
+
+* 단순하고 효과적인 접근법으로 좋은 baseline을 제공할 수 있으며, 미래의 instance-level recognition 연구에 도움이 될 수 있음
+
+## Introduction
+
+
+
