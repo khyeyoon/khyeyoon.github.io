@@ -12,6 +12,8 @@
 
 ### Face detection/Face recognition
 
+### person re-identification 
+
 ### Video Super-Resolution/Video deblurring
 
 ### Video decaptioning
