@@ -3,7 +3,6 @@ title:  "RetinaFace : Single-stage Dense Face Localisation in the Wild review"
 last_modified_at: 2020-07-07 11:50:28 -0400
 categories: 
   - Face detection paper
-  - "2019"
 tags:
   - update
 toc: true
