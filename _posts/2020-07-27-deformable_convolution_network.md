@@ -3,7 +3,6 @@ title:  "Deformable convolutional networks review"
 last_modified_at: 2020-07-27 00:00:00 -0400
 categories: 
   - Deep learning paper
-  - "2017"
 tags:
   - update
 toc: true
