@@ -1,0 +1,87 @@
+---
+title:  "Deep learning for person re-identification: A survey and outlook review"
+last_modified_at: 2020-09-23 00:00:00 -0400
+categories: 
+  - person re-identification paper
+tags:
+  - update
+toc: true
+toc_label: "Getting Started"
+---
+
+# Deep learning for person re-identification: A survey and outlook.
+> Ye, Mang, et al. "Deep learning for person re-identification: A survey and outlook." arXiv preprint arXiv:2001.04193 (2020).
+
+## Abstract
+
+* person re-identification(Re-ID) : 여러개의 겹치지 않는 cameras에서 찾고자 하는 사람을 찾는 것
+
+> 화면 밖으로 벗어난 사람이 다시 등장하였을 때, 동일 인물인지 알 수 있는 기술
+
+* Re-ID는 closed-world와 open-world 두가지 카테고리로 나누어질 수 있음
+
+> 1. closed-world : deep feature representation learning, deep metric learning, ranking optimization
+
+> > 성능에 한계점이 생기면서, open-world 방식들이 등장 
+
+> 2. open-world : 5가지로 나눠질 수 있음
+
+* 기존 방식들의 장점을 분석함으로써, 강력한 AGW baseline을 디자인
+
+> SOTA를 달성하거나, single/cross-modality Re-ID taske에서 비교할만한 성능을 냄
+
+* person Re-ID를 위한 새로운 evaluation metric mINP 도입
+
+> 올바른 매칭을 찾는 것에 대한 cost를 나타냄
+
+* 마지막으로, 중요하지만 조사되지 않았던 이슈들에 대해 토론함
+
+## Introduction
+
+* person Re-ID : 중복되지 않는 카메라들 사이에서 특정 인물을 찾는 문제
+
+> query(찾고자하는 사람)가 주어지면, 해당 인물이 특정 시간 다른 장소의 카메라에 의해 발견되었는지 알아내는 것이 목적
+
+> query person은 image, video sequence, text description으로 표현됨
+
+* 대학교 캠퍼스, 공원, 도로 등등에서 감시카메라가 증가하고 공공 안전이 중요시되면서, Re-ID의 필요성이 증가하고 많은 발전을 이룸
+
+* * *
+
+* person Re-ID의 challenging 원인 : different view points, low-resolution, illumination changes, unconstrained poses, occlusions, heterogeneous modalities 등등
+
+* deep learning을 통해 많은 발전이 있었지만, 여전히 현실에 적용하기에는 어려움이 있음
+
+### person Re-ID system
+
+1) step 1 : raw data collection
+
+감시카메라로부터 raw video data를 얻는 것으로, 이 data는 복잡하고 노이즈가 있는 background clutter를 포함
+
+2) step 2 : bounding box generation
+
+얻은 데이터에서 사람이 포함되어 있도록 bounding boxes를 추출
+
+> 일반적으로, person detection이나 tracking 알고리즘에 의해 수행됨
+
+3) step 3: training data annotation
+
+cross-camera labels을 annotation
+
+> cross-camera 큰 차이 때문에, Re-ID model 학습을 위해서 필수적인 단계
+
+4) step 4 : model training
+
+구별적이고 강력한 Re-ID model을 학습시키기 위한 제일 중요한 단계
+
+> feature representation learning, distance metric learning, 두 방식의 결합 등등 
+
+5) step 5 : pedestrian retrieval
+
+query와 gallery set이 주어지면, 학습된 Re-ID model을 사용하여 feature representations을 추출하고 query-to-gallery similarity를 계산하여 retrieved ranking list가 얻어짐
+
+## Closed-world person re-identification
+
+
+
+<img src="/assets/img/BNNeck/fig1.PNG" width="80%" height="80%" title="70px" alt="memoryblock">
