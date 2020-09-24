@@ -180,8 +180,37 @@ representation learning을 향상시키기 위해 사용
 
 * Architecture modification
 
+### Local feature representation learning
 
+* part/region aggregated features 학습
 
+> misalignment variations에 강력해짐
+
+* * *
+
+* main trend : 전체 body representation과 local part features를 결합
+
+* [92] : triplet 학습 framework에서 local body part features와 global full body features를 통합시키는 multi-channel parts-aggregated deep convolutional network 제안
+
+<img src="/assets/img/re-identification/92.PNG" width="60%" height="60%" title="70px" alt="memoryblock">
+
+* [93] : multi-scale convolutions을 쌓아 body parts 사이 local context 정보를 캡처
+
+<img src="/assets/img/re-identification/93.PNG" width="100%" height="100%" title="70px" alt="memoryblock">
+
+* [16] : multi-stage feature decomposition, selective tree-structured fusion framework
+
+<img src="/assets/img/re-identification/16.PNG" width="100%" height="100%" title="70px" alt="memoryblock">
+
+* [94] : body를 local regions(parts)로 분해, part-level matching 수행
+
+* [95] : global appearance와 local body part feature maps를 각각 추출하는 two-stream network 제안
+
+> bilinear-pooling layer를 통해 two streams을 결합시킴
+
+<img src="/assets/img/re-identification/95.PNG" width="100%" height="100%" title="70px" alt="memoryblock">
+
+* * *
 
 
 
