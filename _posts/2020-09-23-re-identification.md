@@ -108,13 +108,13 @@ query와 gallery set이 주어지면, 학습된 Re-ID model을 사용하여 feat
 
 * [73] : fine-grained features를 위해 작은 사이즈의 convolutional filters를 사용하는 PersonNet 디자인
 
-<img src="/assets/img/re-identification/personnet.PNG" width="100%" height="100%" title="70px" alt="memoryblock">
+<img src="/assets/img/re-identification/personnet.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * [74] : single-image representation(SIR)와 cross-image representation(CIR)로 구성되어 있는 joint learning framework 제안
 
 > triplet loss를 사용하여 학습을 진행
 
-<img src="/assets/img/re-identification/74.PNG" width="60%" height="60%" title="70px" alt="memoryblock">
+<img src="/assets/img/re-identification/74.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * [46] : ID-discriminative Embedding(IDE) model 제안
 
@@ -124,11 +124,11 @@ query와 gallery set이 주어지면, 학습된 Re-ID model을 사용하여 feat
 
 > person retrieval을 위한 적절한 scale을 적응적으로 찾음
 
-<img src="/assets/img/re-identification/77.PNG" width="60%" height="60%" title="70px" alt="memoryblock">
+<img src="/assets/img/re-identification/77.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * [78] : 픽셀 단위 discriminative features를 얻고, 다양한 자세 변화에 강력해지기 위해 Human semantic parsing 기술을 적용
 
-<img src="/assets/img/re-identification/78.PNG" width="60%" height="60%" title="70px" alt="memoryblock">
+<img src="/assets/img/re-identification/78.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * * *
 
@@ -190,15 +190,15 @@ representation learning을 향상시키기 위해 사용
 
 * [92] : triplet 학습 framework에서 local body part features와 global full body features를 통합시키는 multi-channel parts-aggregated deep convolutional network 제안
 
-<img src="/assets/img/re-identification/92.PNG" width="60%" height="60%" title="70px" alt="memoryblock">
+<img src="/assets/img/re-identification/92.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * [93] : multi-scale convolutions을 쌓아 body parts 사이 local context 정보를 캡처
 
-<img src="/assets/img/re-identification/93.PNG" width="100%" height="100%" title="70px" alt="memoryblock">
+<img src="/assets/img/re-identification/93.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * [16] : multi-stage feature decomposition, selective tree-structured fusion framework
 
-<img src="/assets/img/re-identification/16.PNG" width="100%" height="100%" title="70px" alt="memoryblock">
+<img src="/assets/img/re-identification/16.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * [94] : body를 local regions(parts)로 분해, part-level matching 수행
 
@@ -206,7 +206,7 @@ representation learning을 향상시키기 위해 사용
 
 > bilinear-pooling layer를 통해 two streams을 결합시킴
 
-<img src="/assets/img/re-identification/95.PNG" width="100%" height="100%" title="70px" alt="memoryblock">
+<img src="/assets/img/re-identification/95.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * * *
 
@@ -216,25 +216,25 @@ representation learning을 향상시키기 위해 사용
 
 > 다양한 포즈를 잘 다룰 수 있도록 human part 정보 활용
 
-<img src="/assets/img/re-identification/96.PNG" width="60%" height="60%" title="70px" alt="memoryblock">
+<img src="/assets/img/re-identification/96.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * [97] : attention-aware compositional network로 원하지 않는 배경 feature를 가리기 위한 pose-guided part attention module 개발
 
 > 또한, part-level features를 모아줌
 
-<img src="/assets/img/re-identification/97.PNG" width="60%" height="60%" title="70px" alt="memoryblock">
+<img src="/assets/img/re-identification/97.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * [98] : person-region guided pooling deep neural network로 background bias를 해결하기 위해, human parsing 활용
 
-<img src="/assets/img/re-identification/98.PNG" width="60%" height="60%" title="70px" alt="memoryblock">
+<img src="/assets/img/re-identification/98.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * [99] : two-stream network, full image representation learning + densely semantically-aligned part feature learning
 
-<img src="/assets/img/re-identification/99.PNG" width="100%" height="100%" title="70px" alt="memoryblock">
+<img src="/assets/img/re-identification/99.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * [100] : human parts(사람의 신체)와 non-human parts(가방,소지품)가 alignment 됨
 
-<img src="/assets/img/re-identification/100.PNG" width="100%" height="100%" title="70px" alt="memoryblock">
+<img src="/assets/img/re-identification/100.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * * *
 
@@ -279,6 +279,85 @@ representation learning을 향상시키기 위해 사용
 horizontal stripe parts를 얻기 위해 사용하며 더 유연성이 있으나, heavy occlusion과 large background clutter에 민감함
 
 ### Auxiliary feature representation learning
+
+* feature representation을 강화하기 위해, 추가적인 annotated 정보나 generated/augmented 학습 샘플들을 필요로 함
+
+* * *
+
+* Semantic Attributes
+
+* [63] : identity와 attribute(속성)를 공동으로 학습하는 baseline을 도입
+
+<img src="/assets/img/re-identification/63.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* [62] : 예측된 semantic attribute 정보를 통합함으로써 deep attribute learning framework를 제안
+
+> semi-supervised learning 방식으로 feature representation의 generalizability와 robustness 향상시킴
+
+* [107] : part feature learning을 향상시키기 위해 semantic attributes와 attention scheme을 통합시킴
+
+<img src="/assets/img/re-identification/107.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* [108] : video Re-ID feature representation learning을 위해 semantic attributes를 적용
+
+<img src="/assets/img/re-identification/108.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* [109] : unsupervised learning 방식으로 auxiliary supervision을 학습
+
+* [110] : 각 person image에 대한 language descriptions으로 global, local image-language associations를 수집하여 representation learning 수행
+
+<img src="/assets/img/re-identification/110.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* * *
+
+* Viewpoint information
+
+* [111] : Multi-Level Factorisation Net(MLFN)은 identity-discriminative와 다양한 semantic levels에서의 view-invariant feature representations을 학습
+
+<img src="/assets/img/re-identification/111.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* [112] : view confusion feature learning과 함께, view-invariant identity 단위 representation을 추출
+
+<img src="/assets/img/re-identification/112.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* * *
+
+* Domain information
+
+* [45] : multi-domain deep feature representation learning을 위해, 적응적으로 domain-sharable, domain-specific neurons을 수집하기 위한 Domain Guided Dropout(DGD) 알고리즘을 디자인
+
+<img src="/assets/img/re-identification/45.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* [113] : 각각의 카메라를 다른 domain으로 다루면서, multi-camera consistent matching constraint 제안
+
+<img src="/assets/img/re-identification/113.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* [17] : 특정 카메라 정보를 모델링하는 feature representation을 향상시키기 위해, 카메라 view point 정보나 탐지된 카메라 위치 정보를 적용
+
+<img src="/assets/img/re-identification/17.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* * *
+
+* Generation/Augmentation
+
+> auxiliary 정보로 augmented/GAN의 사용으로 생성된 images에 대한 내용
+
+* [33] : person Re-ID에 GAN을 적용한 최초의 시도, 생성된 person images로 supervised feature representation learning을 향상시킴
+
+<img src="/assets/img/re-identification/33.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
