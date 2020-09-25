@@ -402,6 +402,104 @@ horizontal stripe parts를 얻기 위해 사용하며 더 유연성이 있으나
 
 ### Video feature representation learning
 
+* video 기반 Re-ID는 사람이 video sequence(multiple frames)로 나타내어짐
+
+> 풍부한 appearance와 temporal 정보를 활용할 수 있음
+
+* 다양한 이미지를 활용하는 video feature representation learning이라는 challenge가 존재
+
+* * *
+
+* [129] : 정확하고 자동적으로 temporal 정보를 포착하기 위해, recurrent neural network 사용
+
+> siamese network 구조로, temporal 정보 propagation과 temporal pooling layer를 공동으로 최적화시킴
+
+<img src="/assets/img/re-identification/129.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* [130] : spatial, temporal streams을 위한 weighted scheme 개발 (two stream)
+
+<img src="/assets/img/re-identification/130.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* [131] : LSTM 사용, frame-level human region representations을 융합시키기 위한 progressive/sequential fusion framework 제안
+
+> frame-level feature와 spatio-temporal appearance 정보를 공동으로 융합시킴
+
+<img src="/assets/img/re-identification/131.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* [132] : cross-view person identification을 위한 triplet network 도입
+
+> view-specific optical flow learning과 underlying skeleton feature learning을 포함
+
+<img src="/assets/img/re-identification/132.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* [108] : feature disentangling과 frame re-weighting과 함께 semantic attributes를 적용
+
+<img src="/assets/img/re-identification/108.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* * *
+
+* video sequences에서 outlier가 포함되는 것을 피할 수 없기 때문에, attention scheme을 적용하는 방식들이 많이 존재
+
+* [133] : 비디오에서 자동적으로 가장 구별적인 frames을 선택하기 위한 temporal attention model 제안
+
+> spatial recurrent model과 contextual 정보를 통합
+
+* [134] : video sequence에서 중요한 frames을 선택하기 위한 joint Spatial and Temporal Attention Pooling Network(ASTPN) 제안
+
+* [135] : co-segmentation에서 영감을 얻은 attention model, 여러개의 video frames 간 salient features 탐지
+
+* [136] : video sequence에서 body parts를 구별하기 위해 다양한 regularization 사용
+
+* * *
+
+* [138] : 다양한 길이의 video sequences를 다룰 수 있도록, 긴 video seqences를 여러개의 짧은 snippets으로 나눔
+
+* [19] : 자동으로 가려진 부분을 채우기 위해 여러개의 video frames을 활용함
+
+ <img src="/assets/img/re-identification/19.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+### Architecture design
+
+* ResNet50을 backbone으로 사용하는 경우가 많았고, 마지막 convolutional stripe/size를 1으로 수정하여 사용
+
+> 마지막 pooling layer에서 adaptive average pooling을 사용하고, 뒤에 batch normalization을 갖는 bottleneck layer 추가
+
+* * *
+
+* filter pairing neural network(FPNN) : Re-ID를 위한 네트워크가 처음으로 제안
+
+> misalignment와 occlusion을 공동으로 다룸
+
+* [141] : patch feature의 차이를 포착하기 위해 improved neighbor difference layer를 제안
+
+* [82] : WConv layer와 Channel Scaling layer로 이루어진 BraidNet 제안
+
+> WConv layer : misalignments를 해결하기 위해 두 이미지 사이 다른 정보를 추출
+
+> Channel Scaling layer : 각 input channel의 scaling factor를 최적화
+
+* [111] : Multi-Level Factorisation Net(MLFN) 제안
+
+> 다양한 semantic level에서 identity-discriminative feature와 view-invariant feature의 representations을 학습
+
+* [142] : convolution similarity module을 갖는 efficient fully convolutional siamese network 제안
+
+> multi-level similarity measurement를 최적화
+
+* [143] : 효율적이고 작은 네트워크인 Omni Scale Network(OSNet) 제안
+
+> multi-scale feature learning을 하기 위해, 다양한 convolutional streams으로 구성된 residual block 도입
+
+> 계산 효율을 보장하기 위해 point-wise, depth-wise convolutions이 통합되어 있음
+
+* [144] : Auto-Re-ID model 제안
+
+> 효율적이고 효과적인 자동 신경망 구조
+
+<img src="/assets/img/re-identification/144.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+
+
 
 
 
