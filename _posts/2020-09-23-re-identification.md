@@ -346,6 +346,75 @@ horizontal stripe parts를 얻기 위해 사용하며 더 유연성이 있으나
 
 <img src="/assets/img/re-identification/33.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
+* [114] : GAN을 통해 새로운 포즈를 취한 사람의 이미지를 생성
+
+<img src="/assets/img/re-identification/114.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* [115] : 다양한 포즈에 대항하기 위한 pose-normalized image 생성
+
+<img src="/assets/img/re-identification/115.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* [116] : 카메라간 큰 차이를 해결하기 위해, 이미지 생성과정에 camera style information을 도입
+
+<img src="/assets/img/re-identification/116.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* [117] : 구별적인 feature와 일반적인 feature를 공동으로 학습하는 모델로 appearance와 structure code를 각각 학습하여 생성되는 이미지의 질을 높임
+
+<img src="/assets/img/re-identification/117.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* [118], [119] : GAN으로 생성된 이미지를 사용하는 것은 unsupervised domain adaptation Re-ID에도 적용됨
+
+* * *
+
+* [18] : augmented auxiliary information을 위해, 학습 데이터를 다양하게 하기 위해 가려진 샘플들이 생성됨
+
+<img src="/assets/img/re-identification/18.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* [120] : random erasing 전략 사용 (input 이미지에 랜덤 노이즈를 추가)
+
+<img src="/assets/img/re-identification/120.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* [121] : batch DropBlock, attentive feature learning을 강화하기 위해 feature map에서 랜덤으로 region block을 drop
+
+<img src="/assets/img/re-identification/121.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* [122] : 풍부한 supervision을 위해, 다양한 조명 환경에 놓여진 가상의 인물들을 생성 
+
+<img src="/assets/img/re-identification/122.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+<img src="/assets/img/re-identification/122_2.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* * *
+
+* [123] : deep group shuffling random walk framework 제안
+
+> end-to-end 방식으로 모든 갤러리 이미지들 사이의 관계를 활용하여 학습
+
+<img src="/assets/img/re-identification/123.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* [124] : 서로 다른 probe-gallery 사이 유사도를 활용
+
+<img src="/assets/img/re-identification/124.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* [125] : probe-gallery 측정을 향상시키기 위해, domain set을 도입하는 제한된 clustering 전략
+
+<img src="/assets/img/re-identification/125.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+### Video feature representation learning
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
