@@ -212,6 +212,40 @@ representation learning을 향상시키기 위해 사용
 
 * * *
 
+* background clutter에 대항할 수 있는 part level feature learning이 연구됨
+
+* [96] : Pose driven Deep Convolutional(PCD) model 제안
+
+> 다양한 포즈를 잘 다룰 수 있도록 human part 정보 활용
+
+<img src="/assets/img/re-identification/96.PNG" width="60%" height="60%" title="70px" alt="memoryblock">
+
+* [97] : attention-aware compositional network로 원하지 않는 배경 feature를 가리기 위한 pose-guided part attention module 개발
+
+> 또한, part-level features를 모아줌
+
+<img src="/assets/img/re-identification/97.PNG" width="60%" height="60%" title="70px" alt="memoryblock">
+
+* [98] : person-region guided pooling deep neural network로 background bias를 해결하기 위해, human parsing 활용
+
+<img src="/assets/img/re-identification/98.PNG" width="60%" height="60%" title="70px" alt="memoryblock">
+
+* [99] : two-stream network, full image representation learning + densely semantically-aligned part feature learning
+
+<img src="/assets/img/re-identification/99.PNG" width="100%" height="100%" title="70px" alt="memoryblock">
+
+* [100] : human parts(사람의 신체)와 non-human parts(가방,소지품)가 alignment 됨
+
+<img src="/assets/img/re-identification/100.PNG" width="100%" height="100%" title="70px" alt="memoryblock">
+
+* * *
+
+
+
+
+
+
+
 
 
 
