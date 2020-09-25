@@ -132,8 +132,6 @@ query와 gallery set이 주어지면, 학습된 Re-ID model을 사용하여 feat
 
 * * *
 
-* Attention information
-
 representation learning을 향상시키기 위해 사용
 
 1) For attention within the person image
@@ -239,6 +237,52 @@ representation learning을 향상시키기 위해 사용
 <img src="/assets/img/re-identification/100.PNG" width="100%" height="100%" title="70px" alt="memoryblock">
 
 * * *
+
+* [101] : 특정 part attention을 위해, high-order polynomial predictor가 scale maps 생성 
+
+> scale maps은 미묘한 차이의 features를 잘 포착하기 위한 convolutional activations의 high-order statistics를 포함 (HOA : high-order attention)
+
+<img src="/assets/img/re-identification/101.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* [102] : long-range relationships을 직접 모델링하기 위해 second-order non-local attention 도입
+
+<img src="/assets/img/re-identification/102.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* [103] : Interaction-and Aggregation(IA)을 통해, spatial features 사이 inter-dependencies를 모델링하고 연관된 body part features를 융합
+
+<img src="/assets/img/re-identification/103.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* * *
+
+* [91] : pose estimation 없이 horizontal region features를 위해, Siamese Long Short-Term Memory(LSTM) 구조를 도입
+
+> 적응적으로, horizontal region features를 융합시킴
+
+<img src="/assets/img/re-identification/91.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* [68] : strong Part-based Convolutional Baseline(PCB)가 다양한 classifiers로 part features를 학습하기 위한 uniform partition 전략으로 디자인 됨
+
+> 또한, part 내부 일관성을 향상시키기 위한 refined part pooling 전략으로 성능 향상
+
+<img src="/assets/img/re-identification/68.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* * *
+
+* discussion
+
+1) human parsing techniques
+
+의미론적인 body parts를 얻을 수 있지만, 추가적인 pose detector가 필요하고 person Re-ID와 human pose estimation datasets 사이 큰 차이로 인한 잘못된 pose detection 결과가 영향을 끼칠 수 있음
+
+2) uniform partition
+
+horizontal stripe parts를 얻기 위해 사용하며 더 유연성이 있으나, heavy occlusion과 large background clutter에 민감함
+
+### Auxiliary feature representation learning
+
+
+
+
 
 
 
