@@ -132,6 +132,8 @@ query와 gallery set이 주어지면, 학습된 Re-ID model을 사용하여 feat
 
 * * *
 
+* Attention information
+
 representation learning을 향상시키기 위해 사용
 
 1) For attention within the person image
@@ -175,8 +177,6 @@ representation learning을 향상시키기 위해 사용
 * [89] : spectral feature transformation에도 group similarity 적용
 
 * * *
-
-* Architecture modification
 
 ### Local feature representation learning
 
