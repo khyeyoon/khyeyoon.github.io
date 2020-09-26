@@ -142,7 +142,15 @@ representation learning을 향상시키기 위해 사용
 
 * [79] : Harmonious Attention CNN(HA-CNN) model 제안 
 
+> 기존의 방식들은 person bounding box images를 well-aligned images라고 가정하지만, 이는 임의의 aligned person images에 대해서 취약할 수 있음
+
 > misalignment에 강력해지기 위해 soft pixel attention과 hard regional attention을 공동으로 학습
+
+> 하나의 CNN에서 attention selection과 feature representation을 공동으로 학습하는 것의 이점을 보여줌
+
+> 새로운 Harmonious Attention CNN(HA-CNN) model 구현 : feature representations의 최적화와 함께, soft pixel attention과 hard regional attention을 공동으로 학습
+
+<img src="/assets/img/re-identification/79.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * [80] : 채널 단위 feature response를 조정하기 위한 Fully Attentional Block(FAB) 제안
 
