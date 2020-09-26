@@ -323,6 +323,16 @@ horizontal stripe parts를 얻기 위해 사용하며 더 유연성이 있으나
 
 * [63] : identity와 attribute(속성)를 공동으로 학습하는 baseline을 도입
 
+> 상세한 부분 설명들을 포함하는 attributes는 re-ID model이 더 차별적인 feature representations을 학습할 수 있도록 도움을 줌
+
+> attribute labels과 ID labels 정보를 기반으로 하는 attribute person recognition(APR) network 제안
+
+> pedestrian attributes를 예측하는 동시에 re-ID embedding 학습하는 multi-task network
+
+> 2개의 대규모 re-ID datasets를 위해 직접 sttribute labels을 annotation하였고, 두가지 task가 서로 얼마나 도움을 주는지 확인함
+
+> 추가적으로, attributes 사이의 의존성과 연관성을 고려하여 attribute predictions을 re-weighting
+
 <img src="/assets/img/re-identification/63.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * [62] : 예측된 semantic attribute 정보를 통합함으로써 deep attribute learning framework를 제안
@@ -331,17 +341,11 @@ horizontal stripe parts를 얻기 위해 사용하며 더 유연성이 있으나
 
 * [107] : part feature learning을 향상시키기 위해 semantic attributes와 attention scheme을 통합시킴
 
-<img src="/assets/img/re-identification/107.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
-
 * [108] : video Re-ID feature representation learning을 위해 semantic attributes를 적용
-
-<img src="/assets/img/re-identification/108.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * [109] : unsupervised learning 방식으로 auxiliary supervision을 학습
 
 * [110] : 각 person image에 대한 language descriptions으로 global, local image-language associations를 수집하여 representation learning 수행
-
-<img src="/assets/img/re-identification/110.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * * *
 
