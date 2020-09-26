@@ -108,13 +108,19 @@ query와 gallery set이 주어지면, 학습된 Re-ID model을 사용하여 feat
 
 * [73] : fine-grained features를 위해 작은 사이즈의 convolutional filters를 사용하는 PersonNet 디자인
 
+> high-level features와 그에 해당하는 similarity metric을 동시에 학습하는 deep end-to-end neural network 제안
+
+> input : pair of raw RGB images / output : 두 사람이 동일 인물인지를 나타내는 similarity value
+
+> depth를 10 weight layers로 증가시키고 매우 작은 convolution filters(3x3)를 사용하면서, 상당한 성능 향상을 보임
+
+> adaptive Root-Mean-Square(RMSProp) gradient decent 알고리즘 사용
+
 <img src="/assets/img/re-identification/personnet.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * [74] : single-image representation(SIR)와 cross-image representation(CIR)로 구성되어 있는 joint learning framework 제안
 
 > triplet loss를 사용하여 학습을 진행
-
-<img src="/assets/img/re-identification/74.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * [46] : ID-discriminative Embedding(IDE) model 제안
 
@@ -124,11 +130,7 @@ query와 gallery set이 주어지면, 학습된 Re-ID model을 사용하여 feat
 
 > person retrieval을 위한 적절한 scale을 적응적으로 찾음
 
-<img src="/assets/img/re-identification/77.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
-
 * [78] : 픽셀 단위 discriminative features를 얻고, 다양한 자세 변화에 강력해지기 위해 Human semantic parsing 기술을 적용
-
-<img src="/assets/img/re-identification/78.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * * *
 
