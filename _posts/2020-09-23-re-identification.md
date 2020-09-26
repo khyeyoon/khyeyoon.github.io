@@ -369,23 +369,23 @@ horizontal stripe parts를 얻기 위해 사용하며 더 유연성이 있으나
 
 * [112] : view confusion feature learning과 함께, view-invariant identity 단위 representation을 추출
 
-<img src="/assets/img/re-identification/112.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
-
 * * *
 
 * Domain information
 
 * [45] : multi-domain deep feature representation learning을 위해, 적응적으로 domain-sharable, domain-specific neurons을 수집하기 위한 Domain Guided Dropout(DGD) 알고리즘을 디자인
 
+> 다양한 도메인으로부터 deep feature representations을 학습하기 위한 CNN pipeline 제시
+
+> 모든 도메인들에서의 데이터로 CNN을 학습시킬 때, 몇몇 신경세포들은 다른 도메인 간 공유된 representations을 학습함 (나머지 세포들은 특정 도메인 representations 학습)
+
+> 이를 활용한 Domian Guided Dropout 알고리즘 제안
+
 <img src="/assets/img/re-identification/45.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
-* [113] : 각각의 카메라를 다른 domain으로 다루면서, multi-camera consistent matching constraint 제안
-
-<img src="/assets/img/re-identification/113.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+* [113] : 각각의 카메라를 다른 domain으로 간주하는, multi-camera consistent matching constraint 제안
 
 * [17] : 특정 카메라 정보를 모델링하는 feature representation을 향상시키기 위해, 카메라 view point 정보나 탐지된 카메라 위치 정보를 적용
-
-<img src="/assets/img/re-identification/17.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * * *
 
