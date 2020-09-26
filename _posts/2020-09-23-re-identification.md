@@ -353,6 +353,18 @@ horizontal stripe parts를 얻기 위해 사용하며 더 유연성이 있으나
 
 * [111] : Multi-Level Factorisation Net(MLFN)은 identity-discriminative와 다양한 semantic levels에서의 view-invariant feature representations을 학습
 
+> Re-ID는 high, low semantic levels 모두에서 person apprearance의 차별적이고 다양한 view를 갖는 factors를 모델링하는 것이 아주 중요함
+
+> Multi-Level Factorisation Net(MLFN) 제안
+
+> 수동적인 annotation 없이, 다양한 semantic levels에서 사람의 시각적 외향을 차별적인 factors로 분해하는 새로운 네트워크 구조
+
+> 여러개의 블럭이 쌓여 있는 구조이고, 각 블럭은 다양한 factor modules과 factor selection modules을 포함
+
+> factor module : 특정한 레벨에서 잠재적인 factors를 만들어주는 역할
+
+> factor selection module : 각 input 이미지의 내용을 해석하기 위해, 동적으로 factor modules을 선택해주는 역할
+
 <img src="/assets/img/re-identification/111.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * [112] : view confusion feature learning과 함께, view-invariant identity 단위 representation을 추출
