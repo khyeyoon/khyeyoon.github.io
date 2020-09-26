@@ -172,9 +172,25 @@ representation learning을 향상시키기 위해 사용
 
 * [85] : context-aware attentive feature learning 방식 제안
 
+> 기존의 Re-ID 방식들은 pedestrian을 하나의 feature vector로 나타내고, metric space에서 그들을 매칭함
+
+> 하지만, 하나의 feature vector는 현실세계에서 자주 발생하는 시각적 애매모호함을 해결하기 어려움
+
 > pair-wise feature alignment와 refinement를 위해, intra-sequence와 inter-sequence 통합
 
 > temporal 정보에 의존적이지 않기 때문에, 이미지 기반 Re-ID에서 multiple images를 하나의 sequence로 만들어 냄
+
+> Dual ATtention Matching network(DuATM) : context-aware feature sequences 학습과 attentive sequence 비교를 동시에 수행하는 새로운 end-to-end framework 제안
+
+> DuATM framework의 핵심요소는 dual attention mechanism
+
+1. intra-sequence attention이 feature refinement에 사용
+
+2. inter-sequence attention이 feature-pair alignment에 사용
+
+> DuATM network를 decorrelation loss와 cross-entropy loss를 돕는 triplet loss를 사용하여 siamese network로 학습
+
+<img src="/assets/img/re-identification/85.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * [86] : attention consistency를 갖는 siamese network를 제안
 
