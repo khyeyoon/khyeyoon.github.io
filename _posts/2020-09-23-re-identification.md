@@ -582,6 +582,75 @@ horizontal stripe parts를 얻기 위해 사용하며 더 유연성이 있으나
 
 ### End-to-end Re-ID
 
+* Re-ID in raw images/videos
+
+* 모델이 하나의 framework에서 person detection와 re-identification을 공동으로 수행
+
+* [46] : two-stage framework 제안
+
+> 새로운 대규모 데이터세트를 제안하고, raw video frames에서 end-to-end 방식으로 pedestrian detection과 person recognition을 수행하는 종합적인 baselines 제안
+
+> 3-contributions
+
+1. PRW : 새로운 데이터 세트 제공
+
+2.  2가지 간단하지만 효과적인 방법을 통해 pedestrian detection이 Re-ID에 도움을 준다는 것을 보여줌
+
+> cascaded fine-tuning 전략, Confidence Weighted Simlilarity(CWS) metric
+
+3. 정확한 person Re-ID의 특정 상황에 대한 detector의 성능을 평가하는 것에서 통찰력을 얻음
+
+<img src="/assets/img/re-identification/46.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* [55] : single convolutional neural network를 이용한 end-to-end person search system 제안 
+
+> 현실세계에 적용을 할 때, pedestrian의 bounding boxes annotations을 이용할 수 없음
+
+> 이러한 문제를 해결하기 위해, 새로운 person search deep learning framework 제안
+
+> 하나의 convolutional neural network로 pedestrian detection과 person re-identification을 공동으로 다룸
+
+> Online Instance Mathcing(OIM) loss 제안 : 많은 indentities를 갖는 datasets를 효과적으로 학습
+
+> person search를 위한 대규모 데이터세트를 수집하고 annotation 함
+
+<img src="/assets/img/re-identification/55.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* * *
+
+* Multi-camera tracking
+
+* end-to-end person Re-ID는 multi-person tracking와 연관이 있음
+
+* [43] : multi-target multi-camera tracking과 Re-ID 사이 연관성을 학습
+
+> Multi-Target Multi-Camera Tracking(MTMCT) : 여러개의 카메라로 촬영된 video에서 많은 사람들을 추적하는 것
+
+> 하나의 convolutional neural network를 통해, MTMCT와 Re-ID로부터 좋은 features를 학습할 수 있었음
+
+> contributions
+
+1. 학습을 위해 adaptive weighted triplet loss를 사용
+
+2. hard-identify mining을 위해 새로운 기술을 사용
+
+> 제안된 방식은 두 task 모두에서 SOTA를 달성
+
+<img src="/assets/img/re-identification/43.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+### Semi-supervised and unsupervised Re-ID
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
