@@ -498,6 +498,105 @@ horizontal stripe parts를 얻기 위해 사용하며 더 유연성이 있으나
 
 <img src="/assets/img/re-identification/144.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
+* * *
+
+## Open-world person re-identification
+
+### Heterogeneous Re-ID
+
+* Depth-based Re-ID
+
+* depth images는 body shape과 skeleton 정보를 포착하고, 이는 다양한 illumination/clothes 환경에서 Re-ID를 가능하게 함
+
+* [183] : depth-based persion identification을 해결하기 위한 recurrent attention-based model 제안
+
+>  reinforcement learning task로, human body의 작고 구별적인 local region을 식별하기 위해 convolutional network와 recurrent network 결합
+
+> RGB 정보가 없는 이미지에서 identity를 구별할 수 있도록 body shape와 motion dynamic 정보 사용
+
+> 4D spatio-temporal 신호를 사용하여 해결
+
+> depth image만 주어진 dataset에서 SOTA 성능
+
+> view point, appearance, volumetric changes에도 강함
+
+> interpolation 처리를 통해, 2D, 3D, 4D 정보를 공유함
+
+<img src="/assets/img/re-identification/183.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* * *
+
+* Text-to-image Re-ID 
+
+* text description과 RGB images 사이 매칭을 통해 문제를 해결
+
+* [54] : gated neural attention model
+
+> text description과 person images 사이 공유된 features를 학습하기 위한 recurrent neural network로 구성
+
+> 자연어 description으로 사람을 식별하는 것을 연구
+
+> 사람에 대한 설명이 주어지면, 알고리즘은 database의 샘플들의 ranking 수행하고 가장 연관된 샘플을 찾음
+
+> CUHK-PEDES : 대규모의 person description dataset을 수집
+
+> GNA-RNN : gated neural attention mechanism을 갖는 recurrent neural network 제안 (end-to-end로 학습이 가능)
+
+<img src="/assets/img/re-identification/54.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* * *
+
+* Visible-infrared Re-ID
+
+* daytime visible image(RGB img)과 night-time infrared images 사이 cross-modality 매칭을 다루는 것
+
+* [20] : 적응적으로 공유할 수 있는 features를 학습하기 위한 deep zero-padding framework 제안
+
+> 몇몇 응용분야에서는 RGB images가 적합하지 않을 수 있기 때문에, 적외선 이미지와 RGB 이미지 사이 매칭이 필요함
+
+> RCB-IR cross-modality Re-ID 문제를 해결하고 새로운 multiple modality Re-ID dataset(SYSU-MM01)을 제공
+
+> RGB-IR Re-ID 문제를 연구하기 위해, 기존의 유명한 cross-domain models(one-strean, two-stream, asymmetric FC layer)을 평가하고 분석
+
+> one-stream network를 학습하기 위한 deep zero-padding 제안
+
+<img src="/assets/img/re-identification/20.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* * *
+
+* Cross-resolution Re-ID
+
+* low-resolution과 high-resolution images 사이 매칭을 수행
+
+* [196] : Cascaded Super-Resolution GAN 제안
+
+> 실제로는 다양한 low-resolutions과 scale이 존재하기 때문에, 이를 해결할 수 있어야 함 (SALR-REID)
+
+> 단순하게 다양한 low-resolutions을 균일한 high-resolution으로 증가시키는 것은 Re-ID task에 맞지 않음
+
+1. scale-adaptive upscaling이 가능해야 하기 때문에, cascade multiple SR-GANs 사용
+
+2. image feature representation 능력이 필요하기 때문에, re-identification network를 붙임
+
+<img src="/assets/img/re-identification/196.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+### End-to-end Re-ID
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
