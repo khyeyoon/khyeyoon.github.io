@@ -216,15 +216,19 @@ representation learning을 향상시키기 위해 사용
 
 * [92] : triplet 학습 framework에서 local body part features와 global full body features를 통합시키는 multi-channel parts-aggregated deep convolutional network 제안
 
+> 기존의 challenge : 서로 다른 카메라들 사이에서 person Re-ID를 수행하는 것은 어려움
+
+> 새로운 multi-channel parts-based convolutional neural network(CNN) model 제안
+
+> input persons의 global full-body features와 local body-parts features를 공동으로 학습하는 다양한 채널들로 이루어져 있음
+
+> 같은 instance끼리는 가깝게 만들어주고, 다른 instance끼리는 멀게 만들어주는 향상된 triplet loss에 의해 학습됨
+
 <img src="/assets/img/re-identification/92.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * [93] : multi-scale convolutions을 쌓아 body parts 사이 local context 정보를 캡처
 
-<img src="/assets/img/re-identification/93.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
-
 * [16] : multi-stage feature decomposition, selective tree-structured fusion framework
-
-<img src="/assets/img/re-identification/16.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * [94] : body를 local regions(parts)로 분해, part-level matching 수행
 
@@ -232,15 +236,19 @@ representation learning을 향상시키기 위해 사용
 
 > bilinear-pooling layer를 통해 two streams을 결합시킴
 
-<img src="/assets/img/re-identification/95.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
-
 * * *
 
 * background clutter에 대항할 수 있는 part level feature learning이 연구됨
 
 * [96] : Pose driven Deep Convolutional(PCD) model 제안
 
-> 다양한 포즈를 잘 다룰 수 있도록 human part 정보 활용
+> challenge : pose, view point의 변형이 심하면, features의 매칭과 학습의 난이도가 상당히 높아짐
+
+> Pose-driven Deep Convolutional(PCD) model 제안 : 향상된 feature extraction, matching model을 end-to-end로 학습
+
+> pose 변형을 완화시키기 위해 human part 정보를 명시적으로 활용하고, global image와 다양한 local parts로부터 강력한 feature representations을 학습함
+
+> global human body와 local body parts의 features를 매칭시키기 위해, 적응적으로 feature fusion을 수행하는 pose driven feature weighting sub-network 디자인
 
 <img src="/assets/img/re-identification/96.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
@@ -248,25 +256,26 @@ representation learning을 향상시키기 위해 사용
 
 > 또한, part-level features를 모아줌
 
-<img src="/assets/img/re-identification/97.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
-
 * [98] : person-region guided pooling deep neural network로 background bias를 해결하기 위해, human parsing 활용
 
-<img src="/assets/img/re-identification/98.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * [99] : two-stream network, full image representation learning + densely semantically-aligned part feature learning
 
-<img src="/assets/img/re-identification/99.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
-
 * [100] : human parts(사람의 신체)와 non-human parts(가방,소지품)가 alignment 됨
-
-<img src="/assets/img/re-identification/100.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * * *
 
 * [101] : 특정 part attention을 위해, high-order polynomial predictor가 scale maps 생성 
 
-> scale maps은 미묘한 차이의 features를 잘 포착하기 위한 convolutional activations의 high-order statistics를 포함 (HOA : high-order attention)
+> 기존의 방식들은 higher-order attention 메커니즘에 대해 연구가 거의 없음
+
+> attention 메커니즘에서 최초로 복잡한 high-order statics 정보를 활용하고 모델링하는 High-Order Attention(HOA) module 제안
+
+> pedestrians 사이 미묘한 차이를 포착하고 구별적인 attention proposals을 생성
+
+> Re-ID를 zero-shot learning 문제로 풀어내면서, Mixed High-Order Attention Network(MHN) 제안
+
+> > 명시적인 방식으로 attention 정보의 구별성과 풍부성을 향상시킴
 
 <img src="/assets/img/re-identification/101.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
