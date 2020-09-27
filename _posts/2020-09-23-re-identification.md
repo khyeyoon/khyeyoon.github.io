@@ -561,6 +561,12 @@ horizontal stripe parts를 얻기 위해 사용하며 더 유연성이 있으나
 
 <img src="/assets/img/re-identification/144.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
+### Deep metric learning
+
+### Ranking Optimization
+
+### Datasets and Evaluation
+
 * * *
 
 ## Open-world person re-identification
@@ -702,6 +708,20 @@ horizontal stripe parts를 얻기 위해 사용하며 더 유연성이 있으나
 <img src="/assets/img/re-identification/43.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 ### Semi-supervised and unsupervised Re-ID
+
+* Unsupervised Re-ID
+
+* * *
+
+* Unsupervised domain adaptation
+
+* * *
+
+* State-of-the-arts for unsupervised Re-ID
+
+### Noise-rebust Re-ID
+
+### Open-set Re-ID
 
 
 
