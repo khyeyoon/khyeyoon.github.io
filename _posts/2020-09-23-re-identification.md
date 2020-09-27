@@ -463,6 +463,16 @@ horizontal stripe parts를 얻기 위해 사용하며 더 유연성이 있으나
 
 * [129] : 정확하고 자동적으로 temporal 정보를 포착하기 위해, recurrent neural network 사용
 
+> 비디오 기반 Re-ID를 위한 새로운 recurrent neural network 구조 제안
+
+> video sequence가 주어지면, flow 정보를 이용하기 위해 recurrent final layer로 통합한 CNN을 사용하여 각 프레임으로부터 features를 추출
+
+> 모든 시간 프레임에서의 features는 완성된 sequence를 위한 전체적인 appearance features를 제공하는 temporal pooling을 통해 결합
+
+> Siamese network : recurrent layer와 temporal pooling layer로 구성된 covnolutional network는 feature를 추출을 위해 공동으로 학습됨
+
+> apprearance 정보와 모션 정보를 포착하기 위해, colour 정보와 optical flow 정보를 사용
+
 > siamese network 구조로, temporal 정보 propagation과 temporal pooling layer를 공동으로 최적화시킴
 
 <img src="/assets/img/re-identification/129.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
