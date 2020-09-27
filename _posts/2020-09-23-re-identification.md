@@ -479,23 +479,15 @@ horizontal stripe parts를 얻기 위해 사용하며 더 유연성이 있으나
 
 * [130] : spatial, temporal streams을 위한 weighted scheme 개발 (two stream)
 
-<img src="/assets/img/re-identification/130.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
-
 * [131] : LSTM 사용, frame-level human region representations을 융합시키기 위한 progressive/sequential fusion framework 제안
 
 > frame-level feature와 spatio-temporal appearance 정보를 공동으로 융합시킴
-
-<img src="/assets/img/re-identification/131.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * [132] : cross-view person identification을 위한 triplet network 도입
 
 > view-specific optical flow learning과 underlying skeleton feature learning을 포함
 
-<img src="/assets/img/re-identification/132.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
-
 * [108] : feature disentangling과 frame re-weighting과 함께 semantic attributes를 적용
-
-<img src="/assets/img/re-identification/108.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * * *
 
@@ -503,7 +495,17 @@ horizontal stripe parts를 얻기 위해 사용하며 더 유연성이 있으나
 
 * [133] : 비디오에서 자동적으로 가장 구별적인 frames을 선택하기 위한 temporal attention model 제안
 
-> spatial recurrent model과 contextual 정보를 통합
+> person Re-ID에 대한 연구는 늘어났지만 비디오 기반 방식들은 별로 없음 (대부분 이미지 기반)
+
+> 기존의 이미지 기반 방식들은 2-step으로 feature learning과 metric learning을 수행하는데, 이는 temporal 정보와 spatial 정보를 완전히 사용하지 못함
+
+> 비디오 기반 Re-ID를 연구하고 end-to-end 방식으로 features와 metric을 공동으로 학습하는 deep neural network 구조 제안
+
+> 제안된 방식은 temporal attention model에 의해, 자동적으로 가장 차별적인 frames을 고를 수 있음
+
+> 게다가, 다른 pedestrian과의 유사도를 측정할때 spatial recurrent model로 각 위치의 주변 정보를 통합시킴
+
+<img src="/assets/img/re-identification/133.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * [134] : video sequence에서 중요한 frames을 선택하기 위한 joint Spatial and Temporal Attention Pooling Network(ASTPN) 제안
 
