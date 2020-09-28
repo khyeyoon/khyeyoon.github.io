@@ -563,7 +563,93 @@ horizontal stripe parts를 얻기 위해 사용하며 더 유연성이 있으나
 
 ### Deep metric learning
 
+#### Loss function design
+
+<img src="/assets/img/re-identification/fig3.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+* Identity Loss
+
+ Re-ID를 image classification 문제로 해결(각 identity가 다른 class)
+
+ pooling layer나 embedding layer의 output이 feature extractor 역할을 수행
+
+> the cross-entropy
+
+<img src="/assets/img/re-identification/eq1.PNG" width="60%" height="60%" title="70px" alt="memoryblock">
+
+> label y를 갖는 input image x가 주어지면, x의 class가 y일 확률이 softmax 함수로 encoding 됨
+
+> training 중 hard samples을 자동적으로 수집하며, training이 쉬움
+
+* Verification loss
+
+ contrastive loss나 binary verification loss를 통해, pairwise relationship을 최적화함
+ 
+ [Contrastive loss]
+ 
+ 상대적인 pairwise distance 비교의 향상을 위한 손실 함수
+ 
+ <img src="/assets/img/re-identification/eq2.PNG" width="60%" height="60%" title="70px" alt="memoryblock">
+ 
+ > 2개의 input samples 사이 거리는 Euclidean distance로 계산
+ 
+ [Binary verification loss]
+ 
+ input image pair의 positive(정답)와 negative(오답)를 구별하기 위한 손실 함수
+ 
+ > the verification loss with cross-entropy
+ 
+ <img src="/assets/img/re-identification/eq3.PNG" width="60%" height="60%" title="70px" alt="memoryblock">
+ 
+ > verification network는 서로 다른 feature를 정답 또는 오답으로 분류함
+ 
+ > 성능 향상을 위해, identity loss와 결합하여 사용되기도 함
+ 
+ * Triplet loss
+ 
+ Re-ID를 retrieval ranking 문제로 해결
+ 
+ idea : 정답 pair 사이 거리는 좁아야하고, 오답 pair 사이 거리는 넓어야 함
+ 
+ > the triplet loss with a margin parameter
+ 
+ <img src="/assets/img/re-identification/eq4.PNG" width="60%" height="60%" title="70px" alt="memoryblock">
+ 
+ > anchor sample x_i, positive sample x_j, negative sample x_k
+ 
+ > 2개의 samples 사이 거리 d는 Euclidean distance로 계산
+ 
+ * OIM loss : Online Instance Matching loss
+ 
+ instance features가 저장되어 있는 memory bank scheme
+ 
+ <img src="/assets/img/re-identification/eq5.PNG" width="60%" height="60%" title="70px" alt="memoryblock"> 
+ 
+ > memory scheme은 unsupervised domain adaptive Re-ID에도 적용됨
+
 ### Ranking Optimization
+
+초기 ranking list가 주어지면, 자동적인 gallery-to-gallery similarity mining 또는 human interaction에 의해 ranking 순서가 최적화됨
+
+ <src="/assets/img/re-identification/fig4.PNG" width="60%" height="60%" title="70px" alt="memoryblock">
+
+* Re-ranking
+
+초기 ranking list를 최적화히기 위해, gallery-to-gallery similarity를 활용
+
+> top-ranked similarity pulling, bottom-ranked dissimilarity pushing
+
+[Query adaptive]
+
+query difference를 고려하면서, 균일한 searching engine을 대체하기 위해 query adaptive retrieval 전략 사용
+
+[Human interaction]
+
+ranking list를 최적화시키기 위해 human feedback을 사용
+
+* Rank Fusion
+
+retrieval 성능 향상을 위해, 다른 모델에서 얻어진 다양한 ranking lists를 활용
 
 ### Datasets and Evaluation
 
