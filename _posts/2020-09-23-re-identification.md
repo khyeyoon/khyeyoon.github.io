@@ -16,8 +16,6 @@ toc_label: "Getting Started"
 
 * person re-identification(Re-ID) : 여러개의 겹치지 않는 cameras에서 찾고자 하는 사람을 찾는 것
 
-> 화면 밖으로 벗어난 사람이 다시 등장하였을 때, 동일 인물인지 알 수 있는 기술
-
 * Re-ID는 closed-world와 open-world 두가지 카테고리로 나누어질 수 있음
 
 > 1. closed-world : deep feature representation learning, deep metric learning, ranking optimization
