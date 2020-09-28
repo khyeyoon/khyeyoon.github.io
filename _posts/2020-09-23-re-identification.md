@@ -631,7 +631,7 @@ horizontal stripe parts를 얻기 위해 사용하며 더 유연성이 있으나
 
 초기 ranking list가 주어지면, 자동적인 gallery-to-gallery similarity mining 또는 human interaction에 의해 ranking 순서가 최적화됨
 
- <src="/assets/img/re-identification/fig4.PNG" width="60%" height="60%" title="70px" alt="memoryblock">
+ <img src="/assets/img/re-identification/fig4.PNG" width="60%" height="60%" title="70px" alt="memoryblock">
 
 * Re-ranking
 
