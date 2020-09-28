@@ -795,7 +795,41 @@ retrieval 성능 향상을 위해, 다른 모델에서 얻어진 다양한 ranki
 
 ### Semi-supervised and unsupervised Re-ID
 
-* Unsupervised Re-ID
+#### Unsupervised Re-ID
+
+* * *
+
+[deeply unsupervised methods]
+
+cross-camera lavel estimation이 가장 많이 사용되는 방식
+
+* [127] : Dynamic label graph matching for unsupervised video re-identification
+
+> unsupervised person Re-ID에서 label 예측은 아주 중요한 요소
+
+> 강력한 Re-ID models을 학습시키기 위해 feature learning에 사용되는 cross-camera label estimation에 중점을 둔 연구
+
+> 각 카메라에서의 samples에 대한 graph를 생성하고, cross-camera labeling association을 위해 graph matching scheme 도입
+
+> dynamic graph matching(DGM) 방식 제안 : 중간 예측 labels을 갖는 feature space를 더 잘 학습시키면서, 반복적으로 image graph와 label estimation 과정 업데이트
+
+1. 반복을 통해 예측된 labels의 정확도가 상당히 향상됨
+
+2. noisy initial training data에 강력함
+
+<img src="/assets/img/re-identification/127.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
+
+[end-to-end unsupervised Re-ID]
+
+* [208] : 반복적인 clustering, Re-ID model learning 제안
+
+> label이 존재하지 않거나, 일부만 존재하는 상황에서 Re-ID 학습을 연구
+
+> progressive unsupervised learning(PUL) 방식 : pretrained deep representations을 보이지 않는 domain(처음 접하는 도메인)으로 transfer
+
+> PUL은 pedestrian clustering과 CNN의 fine-tuning을 반복적으로 수행
+
+<img src="/assets/img/re-identification/208.PNG" width="70%" height="70%" title="70px" alt="memoryblock">
 
 * * *
 
@@ -803,75 +837,9 @@ retrieval 성능 향상을 위해, 다른 모델에서 얻어진 다양한 ranki
 
 * * *
 
-* State-of-the-arts for unsupervised Re-ID
-
 ### Noise-rebust Re-ID
 
 ### Open-set Re-ID
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
