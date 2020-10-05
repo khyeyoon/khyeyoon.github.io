@@ -1,0 +1,111 @@
+---
+title:  "FairMOT: On the Fairness of Detection and Re-Identification in Multiple Object Tracking review"
+last_modified_at: 2020-10-05 00:00:00 -0400
+categories: 
+  - Multi-Object Tracking paper
+tags:
+  - update
+toc: true
+toc_label: "Getting Started"
+---
+
+# FairMOT: On the Fairness of Detection and Re-Identification in Multiple Object Tracking
+
+## Abstract
+
+* 최근 object detection과 re-ID tasks에서 많은 발전이 있었지만, 두가지 task를 하나의 네트워트에서 공동으로 수행하는 것에 대해서는 많이 연구되지 않았음
+
+* 기존의 시도들은 re-ID task가 공정하게 학습되지 않아서 정확도가 떨어지는 문제점이 존재
+
+1. re-ID를 2번째 task로 처리 
+
+> detection task를 먼저 수행하기 때문에, detection task에 매우 의존적임
+
+> 학습과정에서 detection task에 큰 비중을 두게 되면서 re-ID task를 무시함
+
+2. re-ID features를 추출하기 위해 ROI-Align 사용
+
+> 많은 샘플링 포인트들이 다른 instance나 background에 속하기 때문에, object를 특징짓는데 애매모호함을 유발
+
+* 기존의 문제점들을 해결하기 위해, 단순한 접근법인 FairMOT 제안
+
+> 2-branches : pixel 단위로 objectness scores를 예측하는 branch, re-ID features를 학습하는 branch
+
+* 2가지 tasks를 공평하게 학습하면서 FairMOT는 detection, tracking에서 높은 정확도를 냄
+
+## Introduction 
+
+* Multi-Object Tracking(MOT)는 videos에서 관심있는 objects의 움직임에 따른 위치를 추척하는 task로, computer vision에서 오랫동안 연구되어 옴
+
+* 기존의 방식들은 MOT를 2개의 독립적인 models로 처리함
+
+1. detection model : 각 frame에서 object의 bounding box를 localization
+
+2. association model : 각 bounding box에 대한 re-ID features를 추출하고, 기존 tracks 중 하나에 연결시킴
+
+> 한계점 : 많은 objects를 포함하고 있을 때, real-time inference를 수행할 수 없음
+
+* * *
+
+* multi-task learning이 발전하면서, 하나의 네트워크로 objects를 예측하고 re-ID features를 학습하는 one-shot trackers에 대한 연구가 등장 
+
+<img src="/assets/img/FairMOT/15.PNG" width="100%" height="100%" title="70px" alt="memoryblock">
+
+> two-step 방식들에 비해 정확도가 상당히 떨어짐
+
+> 특히, ID switches의 발생 횟수가 증가함
+
+* * *
+
+* 기존 방식들의 실패요인에 대해 깊이 이해하고, 단순하지만 효과적인 접근법을 제시함
+
+### Unfairness caused by anchors
+
+* anchor-based framework는 많은 ID switches를 유발하기 때문에 re-ID features 학습에 적합하지 않음
+
+* Overlooked re-ID task
+
+> Track R-CNN : cascade style로 object proposals(boxes)을 먼저 예측하고, proposals에서 re-ID features를 추출
+
+> 이런 방식은 re-ID features의 질이 proposals의 질에 매우 의존적이라는 문제점이 있음
+
+> model이 정확한 object proposals을 예측하는 것에 큰 비중을 두면서 학습을 진행하게 되면서 두 tasks가 공정하게 학습되지 않음
+
+* One anchor corresponds to multiple identities
+
+> anchor-based 방식들은 각 proposal에서 features를 추출하기 위해 ROI-Pool이나 ROI-Align을 사용
+
+> 각 ROI-Align에서 대부분의 샘플링 위치들이 다른 instance나 background에 속할 수 있음
+
+<img src="/assets/img/FairMOT/fig.b.PNG" width="50%" height="50%" title="70px" alt="memoryblock">
+
+> 이는 target objects에 대해 정확하고 구별적인 features를 추출하기에 최적이 아님
+
+> 예측된 object centers에서 features를 추출하는 것이 더 좋다는 것을 발견함
+
+* Multiple anchors correspond to one identity
+
+> 다양한 인접 anchors는 IOU 값이 충분히 큰 값을 경우 동일한 identity를 예측하도록 학습되는데, 이는 학습과정에 심각함 애매모호함을 유발함
+
+<img src="/assets/img/FairMOT/fig.c.PNG" width="50%" height="50%" title="70px" alt="memoryblock">
+
+> 또 다른 문제로, 이미지에 작은 변화가 생겼을 때(ex, augmentation) 동일한 anchor가 다른 identities를 예측하도록 학습될 가능성이 있음
+
+> 추가적으로, object detection에서 feature maps은 보통 8/16/32로 downsampling을 수행하는데, 이는 re-ID features를 학습하기에 너무 coarse 하다는 문제점이 있음
+
+### Unfairness caused by features
+
+### Unfairness caused by feature dimension
+
+### Overview of FairMOT
+
+
+
+
+
+
+
+
+
+
+
