@@ -12,7 +12,7 @@ toc_label: "Getting Started"
 # Focal Loss for Dense Object Detection
 > Lin, Tsung-Yi, et al. "Focal loss for dense object detection." Proceedings of the IEEE international conference on computer vision. 2017.
 
-**Abstract**
+## Abstract
 
 * detector
 > Two stage detector(ex RCNN framework)는 높은 정확도를 보임
@@ -25,7 +25,7 @@ toc_label: "Getting Started"
 * loss를 test하기 위해 단순한 detector인 RetinaNet을 만들고 실험함
 > 기존의 one stage detectors 만큼 빠르고 기존 SOTA인 two stage detector보다 성능은 더 좋음
 
-**Introduction**
+## Introduction
 
 * Two-stage detectors : R-CNN framework
 > first stage : object locations 후보 집합을 생성 (sparse sampling)
@@ -73,7 +73,7 @@ toc_label: "Getting Started"
  
  <img src="/assets/img/focal/fig2.PNG" width="50%" height="50%" title="70px" alt="memoryblock">
  
- **Focal Loss**
+ ## Focal Loss
  
  * One stage detection에서의 class imbalance 문제 해결을 위해 고안된 loss function
  
