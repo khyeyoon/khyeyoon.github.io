@@ -227,6 +227,9 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+page_archive:
+  type: liquid
+  path: paginate_path
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:
