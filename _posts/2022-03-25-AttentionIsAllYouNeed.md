@@ -125,7 +125,7 @@ single attention 방식보다 h 번 다르게 학습된 queries, keys, values �
 
 <img src="/assets/img/Transformer/eq2.JPG" width="80%" height="80%">
 
-> $$d_{k} = d_{v} = d_{model}/h = 64로 설정하여 single-head attention과 유사한 연산량을 갖도록 함
+> $$d_{k} = d_{v} = d_{model}/h = 64$$로 설정하여 single-head attention과 유사한 연산량을 갖도록 함
 
 #### Applications of Attention in our Model
 
