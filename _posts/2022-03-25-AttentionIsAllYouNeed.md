@@ -34,7 +34,7 @@ language modeling, machine translation 과 같은 시퀀스 모델링과 변환 
 
 Recurrent models은 일반적으로 입력 시퀀스와 출력 시퀀스의 symbol 위치에 따라 계산됨
 
-  > 이전 hidden state $$h_{t-1}$$, x_{t}를 입력으로 받아 현재 hidden state $$h_{t}$$ 계산
+  > 이전 hidden state $$h_{t-1}, x_{t}$$를 입력으로 받아 현재 hidden state $$h_{t}$$ 계산
   >
   > 이전 값을 계산하고 난 후 현재값을 계산하는 순차적 계산 특성 때문에, 학습 데이터 내 병렬화가 불가능하고, 이는 시퀀스 길이가 길어질수록 비효율적임 
 
@@ -50,24 +50,47 @@ Attention mechanisms은 입력 시퀀스나 출력 시퀀스에서 그들의 거
 
 Transformer는 훨씬 더 많은 병렬화가 가능하고, 8개의 P100 GPU에서 12시간 동안 학습한 후 번역 품질 SOTA 성능에 도달함
 
-## Background
-
-...
-
 ## Model Architecture
 
 가장 경쟁력 있는 neural sequence transduction models은 encoder-decoder 구조를 가짐
 
-    encoder : input sequence of symbol representations $$(x_{1},...,x_{n})$$ -> sequence of continuous representations $$z = (z_{1},...,z_{n})$$
-
-    decoder : $$z$$ -> output sequence $$(y_{1},...,y_{m})$$
+  > encoder : input sequence of symbol representations $$(x_{1},...,x_{n})$$ -> sequence of continuous representations $$z = (z_{1},...,z_{n})$$
+  >
+  > decoder : $$z$$ -> output sequence $$(y_{1},...,y_{m})$$
     
 모델은 매 time step 다음 시퀀스를 생성하기 위한 입력으로 이전에 생성된 symbols을 받음 (auto-regressive)
 
+<img src="/assets/img/Transformer/fig1.JPG" width="80%" height="80%">
+
+Transformer은 encoder-decoder 모두에 self-attention, point-wise, fully connected layers가 쌓여있는 위 그림과 같은 구조로 이루어짐
 
 ### Encoder and Decoder Stacks
 
+* Encoder:
+
+6개의 동일한 layer 블럭이 쌓이는 구조 (N=6)
+
+각 layer 블럭은 2개의 sub-layers로 구성됨
+
+  > multi-head self-attention mechanism + position-wise fully connected feed-forward network
+  > 각 sub-layer에서 layer normalization 전에 residual connection 적용시킴 ($$LayerNorm(x + Sublayer(x))$$)
+  > residual connection을 사용하기 위해 모든 차원을 통일함 ($$d_{model} = 512$$)
+
+* Decoder:
+
+6개의 동일한 layer 블럭이 쌓이는 구조 (N=6)
+
+encoder layer 블럭과 다르게, encoder output에 대한 multi-head attention을 수행하는 새로운 sub_layer가 삽입됨
+
+encoder과 동일한 방식으로 residual connection을 적용
+
+이후 단어를 미리 보는 것을 방지하기 위해 self-attention sub_layer 수정
+
+> output embeddings에 대한 위치 정보만 1로 masking
+
 ### Attention
+
+
 
 #### Scaled Dot-Product Attention
 
@@ -81,7 +104,7 @@ Transformer는 훨씬 더 많은 병렬화가 가능하고, 8개의 P100 GPU에�
 
 ### Positional Encoding
 
-<img src="/assets/img/Word2vec/skip-gram.JPG" width="60%" height="60%">
+
 
 
 
