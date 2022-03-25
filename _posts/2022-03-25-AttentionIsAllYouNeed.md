@@ -90,11 +90,19 @@ encoder과 동일한 방식으로 residual connection을 적용
 
 ### Attention
 
+attention function은 output에 대한 하나의 query와 key-value 쌍들 중 하나를 맵핑시킴
 
+> query, keys, values 모두 벡터
+
+출력은 values의 weighted sum으로 계산되면, 여기서 각 value에 할당된 가중치는 해당 key와 query의 호환성 함수(Softmax 값)에 의해 계산됨
 
 #### Scaled Dot-Product Attention
 
+<img src="/assets/img/Transformer/ScaledDot.JPG" width="80%" height="80%">
+
 #### Multi-Head Attention
+
+<img src="/assets/img/Transformer/MultiHead.JPG" width="80%" height="80%">
 
 #### Applications of Attention in our Model
 
