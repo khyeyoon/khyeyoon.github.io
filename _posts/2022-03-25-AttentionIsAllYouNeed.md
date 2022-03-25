@@ -61,6 +61,8 @@ Transformer는 훨씬 더 많은 병렬화가 가능하고, 8개의 P100 GPU에�
     encoder : input sequence of symbol representations $$(x_{1},...,x_{n})$$ -> sequence of continuous representations $$z = (z_{1},...,z_{n})$$
 
     decoder : $$z$$ -> output sequence $$(y_{1},...,y_{m})$$
+    
+모델은 매 time step 다음 시퀀스를 생성하기 위한 입력으로 이전에 생성된 symbols을 받음 (auto-regressive)
 
 
 ### Encoder and Decoder Stacks
