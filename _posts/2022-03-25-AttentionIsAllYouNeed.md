@@ -100,9 +100,32 @@ attention function은 output에 대한 하나의 query와 key-value 쌍들 중 �
 
 <img src="/assets/img/Transformer/ScaledDot.JPG" width="80%" height="80%">
 
+input : $$d_{k} dimension$$을 가진 queries와 keys, $$d_{v} dimension$$을 가진 values
+
+하나의 query에 대해 모든 keys와 dot products를 계산한 후, values에 대한 weights를 얻기 위해 $$\sqrt{d_{k}}$$로 나누고 softmax 적용
+
+<img src="/assets/img/Transformer/eq1.JPG" width="80%" height="80%">
+
+> Q : query, K : keys, V : values
+> 모든 query를 matrix Q로 묶어서 연산 수행
+
+attention에서 가장 많이 사용되는 방식은 additive attention과 dot-product attention 이고, 논문은 dot-product에 scaling factor $$\sqrt{d_{k}}$$를 추가한 방식 사용
+
+> ??
+
+두가지 방식의 이론상 계산 복잡도는 유사하지만, dot-product attention은 행렬 곱으로 연산을 구성할 수 있어서 훨씬 빠르고 효율적인 연산이 가능함
+
 #### Multi-Head Attention
 
 <img src="/assets/img/Transformer/MultiHead.JPG" width="80%" height="80%">
+
+single attention 방식보다 h 번 다르게 학습된 queries, keys, values 값을 projection하는 것(mulit-attention)이 더 좋은 성능을 보이는 것을 발견함 (h=8)
+
+병렬적으로 attention을 각각 수행하고, concat을 통해 최종 결과값을 얻어냄
+
+<img src="/assets/img/Transformer/eq2.JPG" width="80%" height="80%">
+
+> $$d_{k} = d_{v} = d_{model}/h = 64로 설정하여 single-head attention과 유사한 연산량을 갖도록 함
 
 #### Applications of Attention in our Model
 
