@@ -73,7 +73,9 @@ Transformer은 encoder-decoder 모두에 self-attention, point-wise, fully conne
 각 layer 블럭은 2개의 sub-layers로 구성됨
 
   > multi-head self-attention mechanism + position-wise fully connected feed-forward network
+  > 
   > 각 sub-layer에서 layer normalization 전에 residual connection 적용시킴 ($$LayerNorm(x + Sublayer(x))$$)
+  > 
   > residual connection을 사용하기 위해 모든 차원을 통일함 ($$d_{model} = 512$$)
 
 * Decoder:
@@ -107,6 +109,7 @@ input : $$d_{k} dimension$$을 가진 queries와 keys, $$d_{v} dimension$$을 �
 <img src="/assets/img/Transformer/eq1.JPG" width="80%" height="80%">
 
 > Q : query, K : keys, V : values
+> 
 > 모든 query를 matrix Q로 묶어서 연산 수행
 
 attention에서 가장 많이 사용되는 방식은 additive attention과 dot-product attention 이고, 논문은 dot-product에 scaling factor $$\sqrt{d_{k}}$$를 추가한 방식 사용
