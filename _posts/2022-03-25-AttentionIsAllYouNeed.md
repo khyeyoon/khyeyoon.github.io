@@ -114,7 +114,7 @@ input : $$d_{k} dimension$$을 가진 queries와 keys, $$d_{v} dimension$$을 �
 
 attention에서 가장 많이 사용되는 방식은 additive attention과 dot-product attention 이고, 논문은 dot-product에 scaling factor $$\sqrt{d_{k}}$$를 추가한 방식 사용
 
-> ??
+> $$d_{k}$$ 값이 커지면, dot product 결과값도 너무 많이 커지면서 softmax 함수를 통과시켰을때, 적절한 예측을 수행하기 어렵기 때문에 scaling factor를 사용
 
 두가지 방식의 이론상 계산 복잡도는 유사하지만, dot-product attention은 행렬 곱으로 연산을 구성할 수 있어서 훨씬 빠르고 효율적인 연산이 가능함
 
@@ -132,11 +132,36 @@ single attention 방식보다 h 번 다르게 학습된 queries, keys, values �
 
 #### Applications of Attention in our Model
 
+3가지 방식의 mulit-head attention 사용
+
+* encoder-decoder attention
+
+이전 decoder layer에서 나온 queries와 encoder의 출력으로 나온 keys와 values 값을 이용
+
+  > decoder의 모든 위치에서 input sequence의 모든 위치에 대한 정보를 얻을 수 있게 함
+  >
+  > seq2seq 모델의 일반적인 encoder-decoder attention 모방
+
+* self-attention layers in encoder
+
+이전 encoder의 출력값에서 query, key, value 값을 입력을 받아서 attention 수행
+
+  > 현재 encoder의 각 위치에서 이전 encoder의 모든 위치에서 정보를 얻을 수 있음
+
+* self-attention layers in decoder
+
+decoder 각 위치에서 현재 위치까지의 정보를 얻을 수 있음 (현재 위치 다음 단어를 미리 볼 수 없게 제한)
+
+  > masking out을 통해 보지 말아야 할 위치의 모든 값들을 $$-\infty$$으로 설정
+
 ### Position-wise Feed-Forward Networks
 
-### Embeddings and Softmax
+<img src="/assets/img/Transformer/eq3.JPG" width="80%" height="80%">
 
-### Positional Encoding
+2번의 선형변환과 1번의 ReLU를 사용
+
+> kernel size가 1인 convolution을 2번 진행하는 방식과 동일 (512 -> 2048 -> 512) 
+
 
 
 
