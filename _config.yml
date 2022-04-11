@@ -92,7 +92,7 @@ author:
   name             : "Hyeyoon Kang"
   avatar           : "/assets/img/KakaoTalk_20210724_190114543.jpg"
   bio              : ""
-  location         : "Hanbat university"
+#   location         : "Hanbat university"
   email            : "koycc1220@gmail.com"
   links:
     - label: "GitHub"
