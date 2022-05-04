@@ -77,8 +77,33 @@ ORQA는 다양한 open-domain QA datasets에서 새로운 SOTA 달성하고, den
 
 본 논문에서는 "추가적인 사전학습 없이 오직 questions과 passages 쌍만을 이용하여 dense embedding model을 더 잘 학습시킬 수 있을지"에 대한 해결책을 찾음
 
+논문은 상대적으로 적은 양의 question, passage 쌍을 이용한 가벼운 학습 방식을 발전시키는데 초점을 맞춤
+
+철저한 ablation studies를 통한 최종적인 솔루션은 question과 relevant passage 벡터간 내적을 최대화시키는 방식으로 최적화되는 매우 간단한 방식
+
+  > 유사한 질문과 지문 사이 내적 최대화, 관련없는 질문과 지문 사이 내적 최소화
+
+Dense Passage Retrieval(DPR)은 BM25를 큰 폭으로 뛰어넘었고 (65.2% vs 42.9% in Top-5 accuracy), 
+open Natural Questions settings에서 ORQA와 비교하였을 때 end-to-end QA 정확도를 상당히 향상시킴 (41.5% vs 33.3%)
+
+**Contributions**
+
+  1. 적절한 학습과정으로 존재하는 question-passage 쌍들로 question encoder와 passage encoder를 fine-tuning 하는 방식이 BM25 성능을 상당히 뛰어넘는 것을 보여줌
+
+    > 또한, 경험적으로 추가적인 pretraining이 필요하지 않다는 것을 제시
+
+  2. open-domain question answering에서 높은 retrieval 정확도가 end-to-end QA 정확도에 중요하다는 것을 확인함
+
+    > 최근 reader model에 DPR을 적용하였을 때, 다양한 QA 데이터셋에서 견줄만하거나 더 높은 성능을 달성함
 
 ## Dense Passage Retriever (DPR)
+
+open-domain QA에서 retrieval 향상에 집중
+
+M개의 text passages가 주어졌을 때, DPR의 목적은 모든 passages를 저차원 연속 벡터공간에 indexing 하는 것이고, 
+이를 통해 run-time 시 reader를 위한 관련 passages (top-k)를 효율적으로 찾아줄 수 있음
+
+  > M은 매우 큰 수(2,100만 passages)이고, k는 일반적으로 작은 수(20-100)
 
 ### Overview
 
