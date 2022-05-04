@@ -90,11 +90,11 @@ open Natural Questions settings에서 ORQA와 비교하였을 때 end-to-end QA 
 
   1. 적절한 학습과정으로 존재하는 question-passage 쌍들로 question encoder와 passage encoder를 fine-tuning 하는 방식이 BM25 성능을 상당히 뛰어넘는 것을 보여줌
 
-    > 또한, 경험적으로 추가적인 pretraining이 필요하지 않다는 것을 제시
+    또한, 경험적으로 추가적인 pretraining이 필요하지 않다는 것을 제시
 
   2. open-domain question answering에서 높은 retrieval 정확도가 end-to-end QA 정확도에 중요하다는 것을 확인함
 
-    > 최근 reader model에 DPR을 적용하였을 때, 다양한 QA 데이터셋에서 견줄만하거나 더 높은 성능을 달성함
+    최근 reader model에 DPR을 적용하였을 때, 다양한 QA 데이터셋에서 견줄만하거나 더 높은 성능을 달성함
 
 ## Dense Passage Retriever (DPR)
 
