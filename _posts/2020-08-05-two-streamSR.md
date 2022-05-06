@@ -1,5 +1,5 @@
 ---
-title:  "Two-stream action recognition-oriented video super-resolution review"
+title:  "[Paper Review] Two-stream action recognition-oriented video super-resolution"
 last_modified_at: 2020-08-05 00:00:00 -0400
 categories: 
   - Video Super-Resolution paper
