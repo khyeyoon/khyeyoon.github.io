@@ -1,5 +1,5 @@
 ---
-title:  "Deformable convolutional networks review"
+title:  "[Paper Review] Deformable convolutional networks"
 last_modified_at: 2020-07-27 00:00:00 -0400
 categories: 
   - Deep learning paper
