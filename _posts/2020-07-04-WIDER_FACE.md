@@ -1,5 +1,5 @@
 ---
-title:  "WIDER FACE : A Face Detection Benchmark review"
+title:  "[Paper Review] WIDER FACE : A Face Detection Benchmark"
 last_modified_at: 2020-07-04 11:50:28 -0400
 categories: 
   - Face detection paper
