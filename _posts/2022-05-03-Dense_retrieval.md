@@ -1,5 +1,5 @@
 ---
-title: "[review] Dense passage retrieval for open-domain question answering"
+title: "[Paper Review] Dense passage retrieval for open-domain question answering"
 last_modified_at: 2022-04-16 00:00:00 -0400
 categories: 
   - nlp paper
