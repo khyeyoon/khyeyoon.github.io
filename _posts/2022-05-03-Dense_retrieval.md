@@ -119,8 +119,17 @@ cross attentions의 다양한 layer로 구성된 유사도 계산 모델이 존�
 
 **Encoder**
 
+이론상으로 question, passage encoders는 어떤 모델도 적용 가능함
+
+논문에서는 2개로 독립적인 BERT encoder를 이용하였고(base, uncased), [CLS] token representation 사용 (d=768)
+
 **Inference**
 
+inference 시, passage encoder $$E_{P}$$를 모든 passages에 적용하고, FAISS를 이용하여 인덱싱
+
+  > FAISS는 오픈소스 라이브러리로 사용 가능하고 dense vectors 클러스터링으로 유사 벡터를 매우 효율적으로 찾을 수 있도록 함
+
+run-time 시, question q가 주어지면 $$E_{Q}(q)$$로 embedding $$v_{q}$$을 얻고, 이와 가까운 top k개의 passages를 찾아냄
 
 ### Training
 
