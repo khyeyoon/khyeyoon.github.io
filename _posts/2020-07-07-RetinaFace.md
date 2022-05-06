@@ -1,5 +1,5 @@
 ---
-title:  "RetinaFace : Single-stage Dense Face Localisation in the Wild review"
+title:  "[Paper Review] RetinaFace : Single-stage Dense Face Localisation in the Wild"
 last_modified_at: 2020-07-07 11:50:28 -0400
 categories: 
   - Face detection paper
