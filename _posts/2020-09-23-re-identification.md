@@ -1,5 +1,5 @@
 ---
-title:  "Deep learning for person re-identification: A survey and outlook review"
+title:  "[Paper Review] Deep learning for person re-identification: A survey and outlook"
 last_modified_at: 2020-09-23 00:00:00 -0400
 categories: 
   - person re-identification paper
