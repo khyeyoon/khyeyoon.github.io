@@ -1,5 +1,5 @@
 ---
-title:  "Support Vector Guided Softmax Loss for Face Recognition paper review"
+title:  "[Paper Review] Support Vector Guided Softmax Loss for Face Recognition paper"
 last_modified_at: 2020-07-10 11:50:28 -0400
 categories: 
   - Face recognition paper
