@@ -1,5 +1,5 @@
 ---
-title:  "Focal Loss for Dense Object Detection paper review"
+title:  "[Paper Review] Focal Loss for Dense Object Detection paper"
 last_modified_at: 2020-07-02 11:50:28 -0400
 categories: 
   - Face recognition paper
