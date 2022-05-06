@@ -107,6 +107,21 @@ M개의 text passages가 주어졌을 때, DPR의 목적은 모든 passages를 �
 
 ### Overview
 
+DPR은 모든 text passage를 d 차원 real-valued vectors로 맵핑시키는 dense encoder $$E_{p}$$를 사용하고, retrieval을 위해 사용할 모든 M passages에 대한 index를 생성
+
+run-time 시, DPR은 입력 question을 d-차원 벡터로 맵핑시켜주는 encoder $$E_{Q}$$ 적용하고, 벡터들 중 질문과 가장 가까운 k개의 passages를 찾아냄
+
+question과 passage 간 유사도는 dot product를 이용하여 계산
+
+  <img src="/assets/img/Dense_retrieval_ODQA/q1.JPG" width="90%" height="90%">
+
+cross attentions의 다양한 layer로 구성된 유사도 계산 모델이 존재하지만, DPR에서는 passages representations을 미리 수행한 후 유사도를 계산하기 때문에 분리가능한 방식을 사용해야 함
+
+**Encoder**
+
+**Inference**
+
+
 ### Training
 
 
