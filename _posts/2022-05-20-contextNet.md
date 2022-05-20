@@ -74,6 +74,45 @@ convolution layer 뒤에 SE layer를 위치시켰고, convolution 출력이 glob
 
 실험을 통해, squeeze-and-excitation layers를 ContextNet에 추가시키는 것이 WER 값이 크게 감소시키는 것을 확인함
 
+* * *
+
+많은 layer를 쌓거나 개별적으로 학습된 global vector를 accustic model에 도입하는 하이브리드 ASR 방식의 기존 연구들이 성공적이었음
+
+[17]에서 SE가 unsupervised adaptation을 위한 RNN에 적용되었음
+
+본 논문에서는 SE가 RNN 뿐만 아니라 CNN encoders에도 효과적으로 적용될 수 있음을 보여줌
+
+**ContextNet**의 구조는 encoder에서 depthwise separable 1D convolution 이용과 같은 QuarzNet의 선택에서 영감을 얻음
+
+하지만, SE layer를 도입했다는 점이 다르고, 이외에도 다른 점이 있음
+
+- CTC decoder 대신 RNN-T decoder 사용
+
+- Swish activation function 사용
+
+ContextNet은 LibriSpeech test clean/test-other에서 WER 기준 1.9%/1.4% 성능을 달성
+
+> QuartzNet과 같은 기존 CNN 기반 방식을 크게 뛰어넘었고, tansformer와 LSTM 기반 모델도 뛰어넘음
+
+또한, 빠른 학습과 평가를 위해 ContextNet의 계산 비용을 감소시킬 수 있는 방식을 연구함
+
+- 점진적인 downsampling scheme 
+
+  점진적으로 인코딩된 시퀀스의 길이를 8번 감소시켜서 계산 비용을 크게 줄임
+  
+  이런 scheme으로 모든 convolution layers의 kernel 사이즈를 감소시킬 수 있었음
+  
+- convolutional filters에서 채널 수를 변경함으로써 ContextNet 사이즈를 조절할 수 있음
+
+  <img src="/assets/img/ContextNet/fig1.JPG" width="90%" height="90%">
+
+### Contributions
+
+1. ASR을 위해 global context를 적절히 다룰 수 있는 향상된 CNN 모델 제안
+
+2. 점진적 downsampling scheme, 정확도의 모델 사이즈의 trade-off 간 적절한 모델을 찾기 위한 model scling scheme
+
+
 
 
 
