@@ -112,8 +112,27 @@ ContextNet은 LibriSpeech test clean/test-other에서 WER 기준 1.9%/1.4% 성�
 
 2. 점진적 downsampling scheme, 정확도의 모델 사이즈의 trade-off 간 적절한 모델을 찾기 위한 model scling scheme
 
+## Model
 
+### End-to-end Network: CNN-RNN-Transducer
 
+본 논문에서 제안한 네트워크는 RNN-Transducer framework 기반 모델임
+
+네트워크는 input utterance에 대한 audio encoder, input label에 대한 label encoder, 둘을 결합하고 decoding하는 joint network로 구성
+
+LSTM 기반 **label encoder**와 [20]에서 사용된 **joint network**를 사용하지만, 새로운 CNN 기반 **audio encoder** 제안
+
+### Encoder Design
+
+encoder가 신호 x를 high level representation h로 변환
+
+$$x = (x_{1},...,x_{T}), h = (h_{1},...,h_{T}), where T'<=T$$
+
+$$h = AudioEncoder(x) = C_{K}(C_{K-1}(...C_{1}(x))) $$
+
+  > C는 convolution block이고, 여러개의 convolution layers로 구성 (batch normalization과 activation function이 뒤에 붙음)
+  >
+  > squeeze-and excitation component와 skip connections을 포함하고 있음
 
 
 
