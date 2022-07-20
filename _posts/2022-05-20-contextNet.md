@@ -2,7 +2,7 @@
 title: "[Paper Review] Contextnet: Improving convolutional neural networks for automatic speech recognition with global context"
 last_modified_at: 2022-05-20 00:00:00 -0400
 categories: 
-  - speech recognition paper
+  - Speech Recognition paper
 tags:
   - update
 toc: true
