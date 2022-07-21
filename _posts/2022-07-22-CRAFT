@@ -34,9 +34,45 @@ word-level bounding box로 학습된 기존의 방식들은 임의로 모양을 
   > 제안한 방식은 임의의 방향, 굴곡, 변형된 텍스트와 같이 복잡한 scene text images를 잘 탐지하는데 높은 유연성을 보장함
 
 
-<!-- <img src="/assets/img/STN/fig1.JPG" width="80%" height="80%"> -->
-
 ## Introduction
+
+Scene text detection은 많은 응용분야로 인해 컴퓨터 비전 분야에서 많은 관심을 받았음
+
+> instance translation, image retrieval, scene parsing, geo-location, blind-navigation
+
+최근, 딥러닝 기반 scene text detectors는 좋은 성능을 보임
+
+딥러닝 기반 방식들은 주로 단어 단위(word-level) 바운딩 박스를 localization 하기 위해 학습되지만, 이는 단일 바운딩 박스로 예측하기 어려운 모양(curved, deformed)의 텍스트를 예측하는데 어려움을 겪음
+
+대안으로 challenging texts를 다룰 때, 글자 단위(character-level) 인식이 큰 이점을 얻을 수 있음
+
+> 글자 단위로 탐지하고, 연속적인 글자들을 연결하는 상향식 방법
+
+하지만, 존재하는 대부분의 데이터셋은 글자 단위 annotations을 제공하지 않고, 글자 단위 ground truths를 얻는 것은 매우 비용이 많이 듦
+
+* * * 
+
+개별적인 글자들의 영역을 탐지하고, 탐지된 글자들을 text instance로 연결하는 새로운 text detector 제안 
+
+- CRAFT (Character Region Awareness For Text detection)
+
+  글자에 대한 region score와 affinity score를 생성하는 convolutional neural network
+  
+  - region score : 이미지 속 개별적인 글자들을 localization
+  
+  - affinity score : 각 글자를 하나의 instance로 그룹화하기 위해 사용되는 score
+  
+  글자 단위 annotations이 부족한 것을 보완하기 위해, 존재하는 실제 word-level 데이터셋에서 character-level ground truths를 예측하는 weakly supervised learning framework 제안
+  
+* * *
+
+<img src="/assets/img/CRAFT/fig1.JPG" width="80%" height="80%">
+
+글자 단위로 텍스트 영역을 인식하여 다양한 모양을 가진 텍스트를 쉽게 나타낼 수 있음
+
+ICDAR 데이터셋에 대해 광범위한 실험을 통해 제안한 모델을 평가하였고, SOTA를 뛰어넘는 성능을 보임
+
+또한, MSRATD500, CTW-1500, TotalText 데이터셋에 대한 실험에서 복잡한 경우(long, curved, arbitrarily shaped texts)에 대한 높은 유연성을 보임
 
 ## Related Work
 
