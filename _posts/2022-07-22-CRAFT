@@ -1,0 +1,56 @@
+---
+title: "[Paper Review] Character region awareness for text detection"
+last_modified_at: 2022-07-22 00:00:00 -0400
+categories: 
+  - Text detection paper
+tags:
+  - update
+toc: true
+use_math: true
+toc_label: "Getting Started"
+---
+
+# Character region awareness for text detection
+> Baek, Youngmin, et al. "Character region awareness for text detection." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2019.
+
+## Abstract
+
+최근 neural networks 기반 scene text detection 방식들이 등장하였고, 좋은 성능을 보임
+
+word-level bounding box로 학습된 기존의 방식들은 임의로 모양을 가진 텍스트의 영역을 표현하는데 제한적임
+
+> 단어 단위로 학습된 방식들은 굴곡이 있거나 일반적이지 않은 모양의 텍스트를 나타내기에 적합하지 않음
+ 
+본 논문에서는 개별적인 글자와 글자들 사이 affinity(관련성)를 탐색하여 텍스트 영역을 효과적으로 검출할 수 있는 새로운 text detection 방식 제안함
+
+글자 단위 annotations이 부족한 것을 해결하기 위해, 가상의 데이터셋에서 주어진 글자 단위의 annotations과 실제 데이터셋으로부터 예측된 글자 단위 ground-truths를 함께 활용함
+
+글자들 사이 affinity를 추정하기 위해, 네트워크가 affinity를 위해 새롭게 제안된 representation과 함께 학습됨
+
+- 실험 결과
+
+  매우 굴곡진 텍스트를 포함하고 있는 TotalText, CTW-1500 등 총 6개의 벤치마크에서 큰 격차로 SOTA 달성
+  
+  > 제안한 방식은 임의의 방향, 굴곡, 변형된 텍스트와 같이 복잡한 scene text images를 잘 탐지하는데 높은 유연성을 보장함
+
+
+<!-- <img src="/assets/img/STN/fig1.JPG" width="80%" height="80%"> -->
+
+## Introduction
+
+## Related Work
+
+## Methodology
+
+
+    
+
+
+
+
+
+
+
+
+
+
